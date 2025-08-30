@@ -189,19 +189,19 @@ const projects = [
     comment: "Interview anxiety meets predictive analytics.",
     details: "This application uses a Logistic Regression model trained on historical student data to predict whether a student is likely to be placed. It takes inputs such as academic performance, work experience, and degree specialization to estimate placement probability. The app offers a clean and interactive Streamlit interface, making it useful for students, counselors, and career services to assess employability based on quantitative factors. The model was built with scikit-learn and deployed using joblib for efficient performance."
   },
-  /*{
-    id: 14,
-    title: "Autonomous Drone Navigation",
-    description: "Computer vision system enabling drones to navigate complex environments without GPS.",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
-    category: "Advanced",
-    technologies: ["PyTorch", "SLAM", "ROS"],
-    githubUrl: "#",
-    demoUrl: "#",
-    comment: "Only crashed into three trees before it learned the park layout!",
-    details: "This computer vision system enables drones to navigate complex environments without relying on GPS signals. Using Simultaneous Localization and Mapping (SLAM) techniques and deep learning-based obstacle detection, the drone builds an internal map of its surroundings in real-time. The system is resilient to changing lighting conditions and can operate in both indoor and outdoor settings."
-  },
   {
+    id: 14,
+    title: "Twitter Sentiment Analysis",
+    description: "Logistic Regression & NLP project that classifies tweets into positive or negative sentiments.",
+    image: "/lovable-uploads/twitter.png",
+    category: "Medium",
+    technologies: ["Logistic Regression", "NLTK", "Streamlit"],
+    githubUrl: "https://github.com/wigjatin/Twitter-Sentiment-Analysis",
+    demoUrl: "https://twitter-sentiment-analysis-by-jatinwig.streamlit.app/",
+    comment: "Predicts sentiment faster than people get offended",
+    details: "This project applies Natural Language Processing (NLP) techniques to classify tweets into positive or negative sentiments. Using Logistic Regression along with preprocessing steps such as tokenization, stopword removal, and TF-IDF vectorization, the model achieves reliable performance on real-world Twitter data. A Streamlit-based web app provides an interactive interface where users can input tweets and instantly see sentiment predictions."
+  },
+  /*{
     id: 15,
     title: "Music Genre Classifier",
     description: "Audio analysis tool that identifies music genres from short audio samples.",
