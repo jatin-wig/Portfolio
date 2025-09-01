@@ -19,7 +19,7 @@ const educationHistory = [
   {
     id: 2,
     institution: "Bharat National Public School",
-    degree: "High School Diploma",
+    degree: "High School",
     description: "Science stream (Physics, Chemistry, Maths) with Computer Science. Active participant in coding competitions and science fairs.",
     coursework: ["Physics", "Chemistry", "Mathematics", "Computer Science"]
   }
