@@ -7,8 +7,8 @@ const tools = [
   { name: "VSCode", icon: "💻" },
   { name: "GitHub", icon: "🐙" },
   { name: "Jupyter", icon: "📊" },
-  { name: "SQL", icon: "🗃️" },
-  { name: "Docker", icon: "🐳" }
+  { name: "TensorFlow", icon: "🧠" },
+  { name: "Scikit-learn", icon: "🧪" }
 ];
 
 const ToolsSection = () => {

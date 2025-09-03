@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Play, Pause, RotateCcw, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -13,24 +13,26 @@ interface AutoViewProps {
   autoStart?: boolean;
 }
 
-const sections = [
-  { id: 'hero', name: 'Home', duration: 6000, type: 'section' },
-  { id: 'superpowers', name: 'Skills', duration: 7000, type: 'section' },
-  { id: 'why-choose-me', name: 'Why Choose Me', duration: 6000, type: 'section' },
-  { id: 'projects', name: 'Projects Overview', duration: 5000, type: 'section' },
-  { id: 'project-1', name: 'Sentiment Analysis Engine', duration: 6000, type: 'project' },
-  { id: 'project-2', name: 'Object Detection API', duration: 6000, type: 'project' },
-  { id: 'project-3', name: 'AI Chatbot Assistant', duration: 6000, type: 'project' },
-  { id: 'project-4', name: 'Weather Prediction App', duration: 6000, type: 'project' },
-  { id: 'project-5', name: 'Simple Image Classifier', duration: 6000, type: 'project' },
-  { id: 'project-6', name: 'Stock Price Predictor', duration: 6000, type: 'project' },
-  { id: 'publications', name: 'Research & Publications', duration: 7000, type: 'section' },
-  { id: 'experience', name: 'Experience', duration: 8000, type: 'section' },
-  { id: 'volunteering', name: 'Volunteering', duration: 6000, type: 'section' },
-  { id: 'education', name: 'Education', duration: 6000, type: 'section' },
-  { id: 'resume', name: 'Resume', duration: 6000, type: 'section' },
-  { id: 'contact', name: 'Contact', duration: 6000, type: 'section' }
-];
+// Dynamic sections generation function
+const generateSections = () => {
+  const baseSections = [
+    { id: 'hero', name: 'Home', duration: 6000, type: 'section' },
+    { id: 'superpowers', name: 'Skills', duration: 7000, type: 'section' },
+    { id: 'why-choose-me', name: 'Why Choose Me', duration: 6000, type: 'section' },
+    { id: 'projects', name: 'Projects Overview', duration: 8000, type: 'section' },
+  ];
+
+  const endSections = [
+    { id: 'publications', name: 'Research & Publications', duration: 7000, type: 'section' },
+    { id: 'experience', name: 'Experience', duration: 8000, type: 'section' },
+    { id: 'volunteering', name: 'Volunteering', duration: 6000, type: 'section' },
+    { id: 'education', name: 'Education', duration: 6000, type: 'section' },
+    { id: 'resume', name: 'Resume', duration: 6000, type: 'section' },
+    { id: 'contact', name: 'Contact', duration: 6000, type: 'section' }
+  ];
+
+  return [...baseSections, ...endSections];
+};
 
 const speedOptions = [
   { label: 'Slow', multiplier: 1.5 },
@@ -58,6 +60,9 @@ const AutoView: React.FC<AutoViewProps> = ({
   const [showSpeedMenu, setShowSpeedMenu] = useState(false);
 
   const currentSpeed = speedOptions[speedIndex];
+  
+  // Memoize sections to avoid regenerating on every render
+  const sections = useMemo(() => generateSections(), []);
 
   const simulateClick = useCallback((element: Element) => {
     const rect = element.getBoundingClientRect();
@@ -96,10 +101,10 @@ const AutoView: React.FC<AutoViewProps> = ({
         
         // Then find and click the specific project card
         setTimeout(() => {
-          const projectIndex = parseInt(sectionId.split('-')[1]) - 1;
-          const projectCards = document.querySelectorAll('[data-project-id]');
-          if (projectCards[projectIndex]) {
-            simulateClick(projectCards[projectIndex]);
+          const projectId = parseInt(sectionId.split('-')[1]);
+          const projectCard = document.querySelector(`[data-project-id="${projectId}"]`);
+          if (projectCard) {
+            simulateClick(projectCard);
           }
         }, 1000);
       }

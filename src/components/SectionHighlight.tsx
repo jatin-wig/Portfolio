@@ -8,24 +8,44 @@ interface SectionHighlightProps {
   description: string;
 }
 
-const sectionDescriptions: Record<string, string> = {
-  'Home': 'Meet Jatin - AI/ML Enthusiast & Problem Solver',
-  'Skills': 'Technical superpowers and expertise areas',
-  'Why Choose Me': 'What makes me unique as a developer',
-  'Projects Overview': 'Innovative projects and technical achievements',
-  'Sentiment Analysis Engine': 'Deep learning model with 92% accuracy for sentiment classification',
-  'Object Detection API': 'Real-time object detection using YOLO architecture',
-  'AI Chatbot Assistant': 'Conversational AI with natural language understanding',
-  'Weather Prediction App': 'ML-powered forecasting with 85% accuracy',
-  'Simple Image Classifier': 'Beginner-friendly CNN for cats and dogs classification',
-  'Stock Price Predictor': 'LSTM neural networks with sentiment analysis integration',
-  'Research & Publications': 'Academic contributions and research work',
-  'Experience': 'Professional journey and virtual internships',
-  'Volunteering': 'Community involvement and social impact',
-  'Education': 'Academic background and learning foundation',
-  'Resume': 'Complete professional profile and achievements',
-  'Contact': 'Let\'s connect and collaborate'
+// Generate dynamic section descriptions that include live project data from DOM
+const generateSectionDescriptions = (): Record<string, string> => {
+  const staticDescriptions: Record<string, string> = {
+    'Home': 'Meet Jatin - AI/ML Enthusiast & Problem Solver',
+    'Skills': 'Technical superpowers and expertise areas',
+    'Why Choose Me': 'What makes me unique as a developer',
+    'Projects Overview': 'Innovative projects and technical achievements',
+    'Research & Publications': 'Academic contributions and research work',
+    'Experience': 'Professional journey and virtual internships',
+    'Volunteering': 'Community involvement and social impact',
+    'Education': 'Academic background and learning foundation',
+    'Resume': 'Complete professional profile and achievements',
+    'Contact': 'Let\'s connect and collaborate'
+  };
+
+  // Generate descriptions for all projects dynamically from rendered DOM
+  const projectDescriptions: Record<string, string> = {};
+  
+  // Read from the actual rendered Projects component
+  const projectCards = document.querySelectorAll('[data-project-id]');
+  projectCards.forEach(card => {
+    const titleElement = card.querySelector('h3'); // CardTitle
+    const descriptionElement = card.querySelector('p'); // CardDescription
+    
+    if (titleElement && descriptionElement) {
+      const title = titleElement.textContent?.trim();
+      const description = descriptionElement.textContent?.trim();
+      
+      if (title && description) {
+        projectDescriptions[title] = description;
+      }
+    }
+  });
+
+  return { ...staticDescriptions, ...projectDescriptions };
 };
+
+const sectionDescriptions = generateSectionDescriptions();
 
 const SectionHighlight: React.FC<SectionHighlightProps> = ({ isVisible, title, description }) => {
   return (

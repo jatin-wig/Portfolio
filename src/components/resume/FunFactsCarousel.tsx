@@ -1,28 +1,41 @@
 
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { 
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselApi,
 } from "@/components/ui/carousel";
 import funFacts from './FunFactsData';
 
 const FunFactsCarousel = () => {
   const [currentFactIndex, setCurrentFactIndex] = useState(0);
+  const [api, setApi] = useState<CarouselApi>();
 
-  const showPreviousFact = () => {
-    setCurrentFactIndex(prevIndex => 
-      prevIndex === 0 ? funFacts.length - 1 : prevIndex - 1
-    );
-  };
+  const showPreviousFact = useCallback(() => {
+    api?.scrollPrev();
+  }, [api]);
 
-  const showNextFact = () => {
-    setCurrentFactIndex(prevIndex => 
-      prevIndex === funFacts.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  const showNextFact = useCallback(() => {
+    api?.scrollNext();
+  }, [api]);
+
+  const handleCarouselSelect = useCallback(() => {
+    if (!api) return;
+    setCurrentFactIndex(api.selectedScrollSnap());
+  }, [api]);
+
+  React.useEffect(() => {
+    if (!api) return;
+    
+    api.on("select", handleCarouselSelect);
+    
+    return () => {
+      api.off("select", handleCarouselSelect);
+    };
+  }, [api, handleCarouselSelect]);
 
   return (
     <div className="relative overflow-hidden pb-12">
@@ -32,13 +45,7 @@ const FunFactsCarousel = () => {
           align: "center",
         }}
         className="w-full -mt-6"
-        setApi={api => {
-          if (api) {
-            api.on('select', () => {
-              setCurrentFactIndex(api.selectedScrollSnap());
-            });
-          }
-        }}
+        setApi={setApi}
       >
         <CarouselContent>
           {funFacts.map((fact, index) => (
@@ -121,7 +128,7 @@ const FunFactsCarousel = () => {
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentFactIndex ? "bg-brand-purple w-8" : "bg-gray-300 w-2"
                 }`}
-                onClick={() => setCurrentFactIndex(index)}
+                onClick={() => api?.scrollTo(index)}
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
               />

@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const ResumeDownload = () => {
   return (
     <motion.a 
-      href="https://drive.google.com/file/d/1AbCdEfGhIjKlMnOpQrStUvWxYz123456/view?usp=sharing" 
+      href="https://drive.google.com/file/d/1EAd5qMR8w3qQ23C5zMV7FobeVr_6UZWY/view?usp=sharing" 
       target="_blank"
       rel="noopener noreferrer"
       className="inline-flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white rounded-lg hover:shadow-lg transition-all duration-300 mb-12"
