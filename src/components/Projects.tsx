@@ -38,6 +38,7 @@ const projects = [
     description: "LSTM-based NLP model that predicts the most likely word following a given text sequence.",
     image: "/lovable-uploads/word_next.png",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "Keras", "Streamlit", "LSTM"],
     githubUrl: "https://github.com/wigjatin/next_word_prediction/",
     demoUrl:  "https://nextwordprediction-jatinwig.streamlit.app/",
@@ -50,6 +51,7 @@ const projects = [
     description: "Deep learning system that classifies brain MRI scans into tumor types or no tumor using transfer learning.",
     image: "/lovable-uploads/brain.png",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "Streamlit", "VGG16"],
     githubUrl: "https://github.com/wigjatin/Brain-Tumor-Detection",
     demoUrl: "https://braintumordetectionjatinwig.streamlit.app/",
@@ -62,43 +64,46 @@ const projects = [
     description: "A deep learning–based system that classifies and recognizes traffic signs using TensorFlow, OpenCV, and Streamlit.",
     image: "/lovable-uploads/traffic.png",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "CNN", "OpenCV"],
     githubUrl: "https://github.com/jatinwig/traffic-signal-recognition",
     demoUrl: "https://traffic-signal-recognition-jatin-wig.streamlit.app/",
     comment: "Built for the road, but deployed in the cloud.",
     details: "This project implements a Convolutional Neural Network (CNN) to classify traffic signs with preprocessing using OpenCV. The model is deployed via Streamlit for interactive testing, allowing users to upload images and view predictions instantly."
   },
-
-  /*{
+  {
     id: 4,
     title: "Weather Prediction App",
     description: "ML-powered weather forecasting application with 85% accuracy for 5-day predictions.",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["Scikit-learn", "Pandas", "Flask"],
     githubUrl: "#",
     demoUrl: "#",
     comment: "Weather is chaotic, but this model somehow makes sense of it!",
     details: "This application uses multiple machine learning models to predict weather patterns based on historical data and current atmospheric conditions. It visualizes predictions through interactive charts and maps, allowing users to see temperature, precipitation, wind, and other weather parameters for the next five days."
-  },*/
+  },
   {
     id: 5,
     title: "Spam Detection System",
     description: "Spam detection model using TF-IDF and Naive Bayes for accurate message classification.",
     image: "/lovable-uploads/spam.png",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["Python", "Scikit-learn", "Pandas", "Naive Bayes", "NLP"],
     githubUrl: "https://github.com/wigjatin/spam-detector-large-scale",
     demoUrl: "https://spam-detection-jatin-wig.streamlit.app/",
     comment: "Never thought I'd get excited over a message being labeled 'spam' — here we are.",
     details: "This spam detection system uses Natural Language Processing (NLP) and machine learning to accurately classify messages as spam or not spam. It leverages TF-IDF vectorization and the Multinomial Naive Bayes algorithm, focusing on high precision to avoid false positives. The model is trained on real-world datasets and includes a prediction script for real-time message filtering."
   },
-  /*{
+  {
     id: 6,
     title: "Stock Price Predictor",
     description: "AI-powered stock price prediction tool using LSTM neural networks and sentiment analysis.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["Keras", "LSTM", "NLTK"],
     githubUrl: "#",
     demoUrl: "#",
@@ -111,30 +116,33 @@ const projects = [
     description: "Custom plugin for voice assistants that adds advanced calendar management capabilities.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["Python", "NLTK", "API Integration"],
     githubUrl: "#",
     demoUrl: "#",
     comment: "Now my smart speaker actually understands 'next free Tuesday'!",
     details: "This plugin enhances voice assistants with natural language understanding for complex calendar operations. It can interpret contextual commands like 'schedule a meeting after my last appointment on Thursday' or 'find a 30-minute slot when both Alex and I are free next week'. The system integrates with popular calendar services and learns from user interactions."
-  },*/
+  },
   {
     id: 8,
     title: "House Price Predictor",
     description: "Machine learning model that estimates real estate prices based on key property features.",
     image: "/lovable-uploads/house.jpg",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["Python", "Scikit-learn", "Gradient Boosting", "Pandas"],
     githubUrl: "https://github.com/wigjatin/House-prediction-model/tree/main",
     demoUrl: "https://house-prediction-model-jatin-wig.streamlit.app/",
-    comment: "Taught a model to value homes — it doesn’t even have one.",
+    comment: "Taught a model to value homes — it doesn't even have one.",
     details: "This project applies Gradient Boosting Regression to predict property values using historical sales data and structural attributes like square footage, quality rating, and year built. The pipeline includes robust preprocessing with outlier filtering, feature scaling, and log-transformed targets for improved accuracy. It models complex, non-linear feature interactions and outputs highly reliable estimates, making it useful for buyers, sellers, and agents alike."
   },
-  /*{
+  {
     id: 9,
     title: "Fraud Detection System",
     description: "Real-time fraud detection system for financial transactions using ensemble learning.",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     category: "Advanced",
+    type: "Core AI / ML / NLP",
     technologies: ["XGBoost", "RandomForest", "Spark"],
     githubUrl: "#",
     demoUrl: "#",
@@ -147,6 +155,7 @@ const projects = [
     description: "AI-powered code completion tool that suggests code snippets based on context and intent.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     category: "Hard",
+    type: "GenAI",
     technologies: ["Transformer", "PyTorch", "VSCode Extension"],
     githubUrl: "#",
     demoUrl: "#",
@@ -159,6 +168,7 @@ const projects = [
     description: "ML-powered diagnostic tool that helps identify potential conditions based on symptoms.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     category: "Advanced",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "BioBERT", "Flask"],
     githubUrl: "#",
     demoUrl: "#",
@@ -171,18 +181,20 @@ const projects = [
     description: "IoT-connected system that optimizes home energy usage using predictive analytics.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "IoT", "Time Series Analysis"],
     githubUrl: "#",
     demoUrl: "#",
     comment: "Cut my electricity bill in half while still keeping the house comfortable!",
     details: "This system connects to smart home devices to monitor and optimize energy usage throughout the day. Using predictive analytics and reinforcement learning, it learns occupants' preferences and schedules to minimize energy consumption without sacrificing comfort. The system accounts for weather forecasts, electricity pricing, and user feedback to continuously improve its optimization algorithms."
-  },*/
+  },
   {
     id: 13,
     title: "Placement Prediction System",
     description: "Web app that predicts student placement outcomes based on academic and background data.",
     image: "/lovable-uploads/placement.png",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["Python", "Logistic Regression", "Scikit-learn", "Pandas"],
     githubUrl: "https://github.com/wigjatin/Student---Placement--Prediction-/tree/main",
     demoUrl: "https://student-placement-prediction-jatin-wig.streamlit.app/",
@@ -195,18 +207,20 @@ const projects = [
     description: "Logistic Regression & NLP project that classifies tweets into positive or negative sentiments.",
     image: "/lovable-uploads/twitter.png",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["Logistic Regression", "NLTK", "Streamlit"],
     githubUrl: "https://github.com/wigjatin/Twitter-Sentiment-Analysis",
     demoUrl: "https://twitter-sentiment-analysis-by-jatinwig.streamlit.app/",
     comment: "Predicts sentiment faster than people get offended",
     details: "This project applies Natural Language Processing (NLP) techniques to classify tweets into positive or negative sentiments. Using Logistic Regression along with preprocessing steps such as tokenization, stopword removal, and TF-IDF vectorization, the model achieves reliable performance on real-world Twitter data. A Streamlit-based web app provides an interactive interface where users can input tweets and instantly see sentiment predictions."
   },
-  /*{
+  {
     id: 15,
     title: "Music Genre Classifier",
     description: "Audio analysis tool that identifies music genres from short audio samples.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["Librosa", "CNN", "Flask"],
     githubUrl: "#",
     demoUrl: "#",
@@ -219,6 +233,7 @@ const projects = [
     description: "Self-learning AI agent that masters complex games through reinforcement learning.",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["PyTorch", "OpenAI Gym", "DQN"],
     githubUrl: "#",
     demoUrl: "#",
@@ -231,6 +246,7 @@ const projects = [
     description: "AI-powered financial advisor that provides personalized savings and investment recommendations.",
     image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["Scikit-learn", "NLP", "Flask"],
     githubUrl: "#",
     demoUrl: "#",
@@ -243,6 +259,7 @@ const projects = [
     description: "Simple note-taking app with AI-powered organization and tagging.",
     image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["React", "NLP", "Local Storage"],
     githubUrl: "#",
     demoUrl: "#",
@@ -255,6 +272,7 @@ const projects = [
     description: "Deep learning tool that analyzes satellite imagery to detect environmental changes.",
     image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["TensorFlow", "U-Net", "GIS"],
     githubUrl: "#",
     demoUrl: "#",
@@ -267,6 +285,7 @@ const projects = [
     description: "Creative AI that generates original artwork based on text descriptions or style references.",
     image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
     category: "Advanced",
+    type: "GenAI",
     technologies: ["GANs", "CLIP", "PyTorch"],
     githubUrl: "#",
     demoUrl: "#",
@@ -279,6 +298,7 @@ const projects = [
     description: "AI tool that predicts emerging social media trends before they go viral.",
     image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
     category: "Medium",
+    type: "Core AI / ML / NLP",
     technologies: ["NLP", "Time Series", "Graph Neural Networks"],
     githubUrl: "#",
     demoUrl: "#",
@@ -291,6 +311,7 @@ const projects = [
     description: "Raspberry Pi-powered smart mirror with face recognition and personalized information display.",
     image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["Python", "OpenCV", "Raspberry Pi"],
     githubUrl: "#",
     demoUrl: "#",
@@ -303,6 +324,7 @@ const projects = [
     description: "Educational tool that simulates quantum computing algorithms for learning purposes.",
     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
     category: "Hard",
+    type: "Core AI / ML / NLP",
     technologies: ["Qiskit", "NumPy", "Matplotlib"],
     githubUrl: "#",
     demoUrl: "#",
@@ -315,6 +337,7 @@ const projects = [
     description: "Interactive tool that visualizes protein folding simulations in 3D space.",
     image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
     category: "Advanced",
+    type: "Core AI / ML / NLP",
     technologies: ["PyMOL", "AlphaFold", "Three.js"],
     githubUrl: "#",
     demoUrl: "#",
@@ -327,6 +350,7 @@ const projects = [
     description: "AI-enhanced flashcard app that adjusts to your learning pace and trouble areas.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
     category: "Easy",
+    type: "Core AI / ML / NLP",
     technologies: ["React", "Spaced Repetition", "NLP"],
     githubUrl: "#",
     demoUrl: "#",
@@ -339,24 +363,26 @@ const projects = [
     description: "Automated system that designs optimal neural network architectures for specific tasks.",
     image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
     category: "Advanced",
+    type: "Core AI / ML / NLP",
     technologies: ["AutoML", "PyTorch", "Reinforcement Learning"],
     githubUrl: "#",
     demoUrl: "#",
     comment: "It designed a neural network that outperformed my hand-crafted model after just 24 hours of search!",
     details: "This automated system uses reinforcement learning and evolutionary algorithms to discover optimal neural network architectures for specific tasks. It explores the space of possible architectures efficiently, testing promising candidates on the target problem. The system optimizes for both performance and computational efficiency, creating networks that achieve state-of-the-art results while minimizing parameters and inference time."
-  }*/
+  }
 ];
 
 const Projects = () => {
+  const [activeType, setActiveType] = useState("GenAI");
   const [activeCategory, setActiveCategory] = useState("All");
   const [viewingProject, setViewingProject] = useState(null);
   const [carouselApi, setCarouselApi] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [projectDetails, setProjectDetails] = useState(null);
 
-  const filteredProjects = activeCategory === "All" 
-    ? projects 
-    : projects.filter(project => project.category === activeCategory);
+  const filteredProjects = projects
+    .filter(project => project.type === activeType)
+    .filter(project => activeCategory === "All" ? true : project.category === activeCategory);
 
   const totalPages = Math.ceil(filteredProjects.length / 3);
 
@@ -365,7 +391,7 @@ const Projects = () => {
       carouselApi.scrollTo(0);
       setCurrentPage(0);
     }
-  }, [activeCategory, carouselApi]);
+  }, [activeType, activeCategory, carouselApi]);
 
   const handleCategoryChange = (value) => {
     if (value) setActiveCategory(value);
@@ -424,11 +450,60 @@ const Projects = () => {
           initial={{ opacity: 0 }} 
           animate={{ opacity: 1 }} 
           transition={{ duration: 0.7, delay: 0.2, type: "spring", damping: 20 }}
-          className="text-gray-600 text-center mb-12 text-lg"
+          className="text-gray-600 text-center mb-8 text-lg"
         >
           From simple scripts to complex neural networks, here's what I've built.
         </motion.p>
 
+        {/* Project Type Tabs */}
+        <motion.div 
+          className="flex justify-center mb-8"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, type: "spring", damping: 20 }}
+        >
+          <ToggleGroup 
+            type="single" 
+            value={activeType}
+            onValueChange={(value) => value && setActiveType(value)}
+            className="flex gap-3 p-1.5 bg-white rounded-full shadow-lg border border-gray-200"
+          >
+            <ToggleGroupItem
+              value="GenAI"
+              aria-label="GenAI Projects"
+              className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold ${
+                activeType === "GenAI" 
+                  ? "bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white shadow-md" 
+                  : "bg-transparent text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                GenAI
+              </motion.span>
+            </ToggleGroupItem>
+            <ToggleGroupItem
+              value="Core AI / ML / NLP"
+              aria-label="Core AI / ML / NLP Projects"
+              className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold ${
+                activeType === "Core AI / ML / NLP" 
+                  ? "bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white shadow-md" 
+                  : "bg-transparent text-gray-700 hover:bg-gray-50"
+              }`}
+            >
+              <motion.span
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Core AI / ML / NLP
+              </motion.span>
+            </ToggleGroupItem>
+          </ToggleGroup>
+        </motion.div>
+
+        {/* Category Filter */}
         <motion.div 
           className="flex justify-center mb-12"
           initial={{ opacity: 0, y: 10 }}

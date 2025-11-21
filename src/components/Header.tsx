@@ -11,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <header className="py-4 px-6 border-b flex items-center justify-between">
+    <header className="py-4 px-6 borderd-b flex items-center justify-between">
       <Link to="/" className="text-2xl font-bold text-brand-purple">
         Jatin Wig
       </Link>
@@ -22,6 +22,7 @@ const Header = () => {
           <Link to="/" className="text-foreground hover:text-brand-purple">Home</Link>
           <Link to="/skills" className="text-foreground hover:text-brand-purple">Skills</Link>
           <Link to="/projects" className="text-foreground hover:text-brand-purple">Projects</Link>
+          <Link to="/genai-projects" className="text-foreground hover:text-brand-purple">GenAI Projects</Link>
           <Link to="/publications" className="text-foreground hover:text-brand-purple">Research & Publications</Link>
           <Link to="/experience" className="text-foreground hover:text-brand-purple">Experience</Link>
           <Link to="/volunteering" className="text-foreground hover:text-brand-purple">Volunteering</Link>
@@ -46,6 +47,7 @@ const Header = () => {
             <Link to="/" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Home</Link>
             <Link to="/skills" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Skills</Link>
             <Link to="/projects" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Projects</Link>
+            <Link to="/genai-projects" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>GenAI Projects</Link>
             <Link to="/publications" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Research & Publications</Link>
             <Link to="/experience" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Experience</Link>
             <Link to="/volunteering" className="px-6 py-3 text-foreground hover:text-brand-purple hover:bg-gray-50" onClick={toggleMenu}>Volunteering</Link>
