@@ -32,7 +32,7 @@ const projectCategories = ["All", "Easy", "Medium", "Hard", "Advanced"];
 
 const projects = [
   // All existing projects:
-  {
+  /*{
     id: 1,
     title: "Next Word Predictor",
     description: "LSTM-based NLP model that predicts the most likely word following a given text sequence.",
@@ -44,7 +44,7 @@ const projects = [
     demoUrl:  "https://nextwordprediction-jatinwig.streamlit.app/",
     comment: "Built a model that finishes my sentences better than my friends do!",
     details: "This project implements a next-word prediction system using a custom-trained LSTM neural network. Trained on a custom English text corpus, it uses Keras for tokenization, sequence creation, and model building. The system processes text input, learns contextual relationships, and predicts the most probable next word out of the vocabulary. Includes top-5 ranked suggestions and a live Streamlit demo for real-time interaction. Compared LSTM with GRU and Simple RNN — LSTM outperformed both in contextual accuracy and sequence memory."
-  },
+  },*/
   {
     id: 2,
     title: "Brain Tumor Detector",
@@ -57,7 +57,7 @@ const projects = [
     demoUrl: "https://braintumordetectionjatinwig.streamlit.app/",
     comment: "Nothing felt more powerful than teaching a model to spot tumors with 98% accuracy.",
     details: "This project uses VGG16-based transfer learning to classify brain MRI scans into glioma, meningioma, pituitary tumors, or no tumor. The model was trained on a dataset of over 2800 images, augmented for robustness, and fine-tuned using custom classification layers. It achieved 98% accuracy on test data with balanced precision and recall. A Streamlit web app provides an intuitive interface for real-time prediction. Designed to support medical professionals by offering fast, reliable tumor detection in MRI images."
-  },
+  },/*
   {
     id: 3,
     title: "Traffic Sign Recognition",
@@ -70,19 +70,19 @@ const projects = [
     demoUrl: "https://traffic-signal-recognition-jatin-wig.streamlit.app/",
     comment: "Built for the road, but deployed in the cloud.",
     details: "This project implements a Convolutional Neural Network (CNN) to classify traffic signs with preprocessing using OpenCV. The model is deployed via Streamlit for interactive testing, allowing users to upload images and view predictions instantly."
-  },
+  },*/
   {
     id: 4,
-    title: "Weather Prediction App",
-    description: "ML-powered weather forecasting application with 85% accuracy for 5-day predictions.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    category: "Medium",
+    title: "Small Language Model from scratch",
+    description: "Decoder-only Transformer language model built entirely in PyTorch with an optimized training pipeline and autoregressive text generation.",
+    image: "/lovable-uploads/Small-Language-Models.jpg",
+    category: "Advanced",
     type: "Core AI / ML / NLP",
-    technologies: ["Scikit-learn", "Pandas", "Flask"],
-    githubUrl: "#",
+    technologies: ["Python", "PyTorch", "Transformers", "Mixed Precision Training", "Cosine LR Scheduling"],
+    githubUrl: "https://github.com/jatin-wig/Small-Language-Model-from-scratch",
     demoUrl: "#",
-    comment: "Weather is chaotic, but this model somehow makes sense of it!",
-    details: "This application uses multiple machine learning models to predict weather patterns based on historical data and current atmospheric conditions. It visualizes predictions through interactive charts and maps, allowing users to see temperature, precipitation, wind, and other weather parameters for the next five days."
+    comment: "Turns out building a language model from scratch teaches you more than just tokens, it teaches patience.",
+    details: "This project implements a Small Language Model completely from scratch using PyTorch, without relying on high-level training frameworks. It features a decoder-only Transformer architecture designed for efficient sequence modeling and autoregressive text generation. The training pipeline includes an optimized memmap data loader for handling large datasets, mixed-precision training for faster computation and reduced memory usage, and cosine learning rate scheduling for stable convergence. The model demonstrates a deep understanding of transformer internals, training mechanics, and scalable NLP system design."
   },
   {
     id: 5,
@@ -99,29 +99,29 @@ const projects = [
   },
   {
     id: 6,
-    title: "Stock Price Predictor",
-    description: "AI-powered stock price prediction tool using LSTM neural networks and sentiment analysis.",
-    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+    title: "TradeValidator AI",
+    description: "Vision-powered trading intelligence system that analyzes chart screenshots and generates structured trade insights.",
+    image: "/lovable-uploads/TradeValidator.png",
     category: "Hard",
-    type: "Core AI / ML / NLP",
-    technologies: ["Keras", "LSTM", "NLTK"],
-    githubUrl: "#",
+    type: "GenAI",
+    technologies: ["Python", "Google Gemini API", "Computer Vision", "Prompt Engineering",],
+    githubUrl: "https://github.com/jatin-wig/Trade-Validator-AI",
     demoUrl: "#",
-    comment: "If only it could make me rich... still working on that part.",
-    details: "This tool combines historical stock price data with sentiment analysis from financial news to predict future stock movements. Using Long Short-Term Memory (LSTM) neural networks, it can identify patterns and dependencies in time series data that are invisible to human analysts. The system includes visualizations of predicted vs. actual prices and confidence intervals."
+    comment: "Because sometimes a second pair of AI eyes can spot what human emotions miss.",
+    details: "TradeValidator AI is a vision-powered trading intelligence platform that analyzes chart screenshots to produce professional, structured trade insights. Leveraging multimodal AI, the system evaluates market structure, trade validity, entry quality, and potential risk conditions to support more informed decision-making. The platform focuses on objective analysis rather than prediction, helping traders reduce emotional bias while reviewing setups. Built with scalability in mind, it demonstrates practical applications of computer vision and large language models within the fintech space. This tool is strictly intended for educational and informational purposes only and does not provide financial advice.",
   },
   {
     id: 7,
-    title: "Voice Assistant Plugin",
-    description: "Custom plugin for voice assistants that adds advanced calendar management capabilities.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
+    title: "Food Delivery Customer Support",
+    description: "AI-powered customer support platform that combines deterministic workflows with LLM intelligence to simulate real-world food delivery operations.",
+    image: "/lovable-uploads/food.png",
     category: "Medium",
-    type: "Core AI / ML / NLP",
-    technologies: ["Python", "NLTK", "API Integration"],
-    githubUrl: "#",
+    type: "GenAI",
+    technologies: ["Python", "FastAPI", "Streamlit", "SQLite", "LLMs", "Workflow Automation"],
+    githubUrl: "https://github.com/jatin-wig/Food-Delivery-Customer-Support",
     demoUrl: "#",
-    comment: "Now my smart speaker actually understands 'next free Tuesday'!",
-    details: "This plugin enhances voice assistants with natural language understanding for complex calendar operations. It can interpret contextual commands like 'schedule a meeting after my last appointment on Thursday' or 'find a 30-minute slot when both Alex and I are free next week'. The system integrates with popular calendar services and learns from user interactions."
+    comment: "Turns customer chaos into structured conversations — automatically.",
+    details: "The AI Food Delivery Support System is an intelligent platform designed to replicate real-world customer support operations within a food delivery ecosystem. It combines deterministic backend workflows with large language model intelligence to manage the complete order lifecycle — including ETA estimation, cancellations, refunds, and dynamic customer interactions. Built using FastAPI for high-performance APIs, Streamlit for an interactive interface, and SQLite for lightweight data persistence, the system demonstrates production-style architecture and orchestration. By blending rule-based logic with conversational AI, the project showcases how modern support platforms can scale efficiently while maintaining contextual, human-like communication."
   },
   {
     id: 8,
@@ -138,44 +138,44 @@ const projects = [
   },
   {
     id: 9,
-    title: "Fraud Detection System",
-    description: "Real-time fraud detection system for financial transactions using ensemble learning.",
-    image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-    category: "Advanced",
-    type: "Core AI / ML / NLP",
-    technologies: ["XGBoost", "RandomForest", "Spark"],
-    githubUrl: "#",
+    title: "Document Intelligence — PDF Chat",
+    description: "Production-style local RAG system enabling conversational querying and semantic search over PDF documents using Ollama.",
+    image: "/lovable-uploads/document.png",
+    category: "Medium",
+    type: "GenAI",
+    technologies: ["Python", "Ollama", "Llama3", "LangChain", "FAISS", "HuggingFace", "Streamlit"],
+    githubUrl: "https://github.com/jatin-wig/Document-Intelligence-PDF-Chat-with-Ollama",
     demoUrl: "#",
-    comment: "Catches the bad guys while they're still typing their card number.",
-    details: "This system analyzes financial transactions in real-time to identify potentially fraudulent activities. It uses an ensemble of machine learning models including XGBoost and RandomForest to evaluate multiple risk factors simultaneously. The system has been deployed in production environments and achieves a false positive rate below 0.1% while catching 95% of fraudulent transactions."
+    comment: "Your documents shouldn’t just sit there, they should be able to talk back.",
+    details: "Document Intelligence — PDF Chat is a production-style Retrieval-Augmented Generation (RAG) system designed for fully local inference, enabling secure and private conversational interactions with PDF documents. The application ingests structured documents, generates high-quality vector embeddings using HuggingFace Sentence Transformers, and performs semantic retrieval through FAISS. With Maximum Marginal Relevance (MMR) optimization, the system enhances context diversity while minimizing redundancy in retrieved chunks. Powered by a locally hosted Llama3 model via Ollama, it eliminates reliance on external LLM APIs while maintaining strong reasoning capabilities. Built with LangChain for orchestration and Streamlit for an interactive UI, the project reflects real-world GenAI architecture focused on privacy, performance, and scalable document intelligence workflows."
   },
   {
     id: 10,
-    title: "Code Completion Tool",
-    description: "AI-powered code completion tool that suggests code snippets based on context and intent.",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    category: "Hard",
+    title: "YouTube Transcript Chatbot",
+    description: "GenAI chatbot that enables conversational querying over YouTube videos by transforming transcripts into a searchable knowledge base.",
+    image: "/lovable-uploads/youtube.png",
+    category: "Hard", 
     type: "GenAI",
-    technologies: ["Transformer", "PyTorch", "VSCode Extension"],
-    githubUrl: "#",
+    technologies: ["Python", "Streamlit", "LangChain", "FAISS", "Sentence Transformers", "Google Gemini", "youtube-transcript-api"],
+    githubUrl: "https://github.com/jatin-wig/Youtube-Transcription-Gen-AI",
     demoUrl: "#",
-    comment: "It writes better code than I do sometimes...should I be worried?",
-    details: "This tool uses a fine-tuned transformer model to provide context-aware code suggestions across multiple programming languages. It analyzes the surrounding code context, variable names, and comments to generate appropriate completions. The VSCode extension integrates seamlessly with the development workflow and learns from user acceptances and rejections to improve over time."
+    comment: "Because watching a 2-hour video for one answer is inefficient , querying it is smarter.",
+    details: "The YouTube Transcript Chatbot is a Streamlit-based generative AI application that allows users to chat with any YouTube video using its transcript as the knowledge source. The system automatically extracts transcripts with timestamps, converts them into vector embeddings, and stores them in FAISS for high-speed semantic retrieval. Built on a Retrieval-Augmented Generation (RAG) pipeline with LangChain, it generates grounded responses through Google Gemini while maintaining full conversational memory. The application enhances transparency by displaying sources for each answer and dynamically generating clickable timestamp links that redirect users to the exact moment in the video. This project demonstrates strong capabilities in RAG architecture, vector search optimization, conversational context handling, and production-style GenAI application design."
   },
   {
     id: 11,
-    title: "Healthcare Diagnostic Assistant",
-    description: "ML-powered diagnostic tool that helps identify potential conditions based on symptoms.",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
-    category: "Advanced",
-    type: "Core AI / ML / NLP",
-    technologies: ["TensorFlow", "BioBERT", "Flask"],
-    githubUrl: "#",
+    title: "Resume + Job Assistant",
+    description: "Gemini-powered resume intelligence platform that analyzes resumes against job descriptions and generates ATS-driven improvements and tailored cover letters.",
+    image: "/lovable-uploads/resume.png",
+    category: "Medium",
+    type: "GenAI",
+    technologies: ["Python", "Streamlit", "Google Gemini", "PDF Parsing", "Prompt Engineering"],
+    githubUrl: "https://github.com/jatin-wig/Resume-Job-Assistant-Gen-AI-",
     demoUrl: "#",
-    comment: "Not a replacement for doctors, but they've started asking it for second opinions!",
-    details: "This diagnostic assistant uses machine learning to analyze patient symptoms and medical history to suggest potential conditions for healthcare providers to consider. Trained on millions of anonymized medical records, it achieves 87% accuracy in including the correct diagnosis in its top 3 suggestions. The system includes explanations for its suggestions and relevant medical literature references."
+    comment: "Your resume deserves better odds.",
+    details: "Resume + Job Assistant is a generative AI platform designed to streamline the job application process through intelligent resume analysis. Users can upload a resume PDF and compare it against a job description to receive ATS-focused optimization tips, keyword gap analysis, alignment insights, and actionable resume improvements. The system also generates job-specific cover letters by synthesizing resume data with role requirements. Powered by Google Gemini and delivered through a clean Streamlit interface with dedicated feature tabs, the application demonstrates practical LLM orchestration, structured prompt design, and real-world NLP workflows aimed at increasing application effectiveness."
   },
-  {
+  /*{
     id: 12,
     title: "Smart Home Energy Optimizer",
     description: "IoT-connected system that optimizes home energy usage using predictive analytics.",
@@ -187,7 +187,7 @@ const projects = [
     demoUrl: "#",
     comment: "Cut my electricity bill in half while still keeping the house comfortable!",
     details: "This system connects to smart home devices to monitor and optimize energy usage throughout the day. Using predictive analytics and reinforcement learning, it learns occupants' preferences and schedules to minimize energy consumption without sacrificing comfort. The system accounts for weather forecasts, electricity pricing, and user feedback to continuously improve its optimization algorithms."
-  },
+  },*/
   {
     id: 13,
     title: "Placement Prediction System",
@@ -214,7 +214,7 @@ const projects = [
     comment: "Predicts sentiment faster than people get offended",
     details: "This project applies Natural Language Processing (NLP) techniques to classify tweets into positive or negative sentiments. Using Logistic Regression along with preprocessing steps such as tokenization, stopword removal, and TF-IDF vectorization, the model achieves reliable performance on real-world Twitter data. A Streamlit-based web app provides an interactive interface where users can input tweets and instantly see sentiment predictions."
   },
-  {
+  /*{
     id: 15,
     title: "Music Genre Classifier",
     description: "Audio analysis tool that identifies music genres from short audio samples.",
@@ -369,7 +369,7 @@ const projects = [
     demoUrl: "#",
     comment: "It designed a neural network that outperformed my hand-crafted model after just 24 hours of search!",
     details: "This automated system uses reinforcement learning and evolutionary algorithms to discover optimal neural network architectures for specific tasks. It explores the space of possible architectures efficiently, testing promising candidates on the target problem. The system optimizes for both performance and computational efficiency, creating networks that achieve state-of-the-art results while minimizing parameters and inference time."
-  }
+  }*/
 ];
 
 const Projects = () => {

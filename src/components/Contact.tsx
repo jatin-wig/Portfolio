@@ -74,7 +74,7 @@ Best Regards,
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">GitHub</p>
-                      <p className="font-medium">github.com/wigjatin</p>
+                      <p className="font-medium">github.com/jatin-wig</p>
                     </div>
                   </div>
                 </div>
@@ -106,7 +106,7 @@ Best Regards,
                 </div>
               </a>
 
-              <a href="https://github.com/wigjatin" className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+              <a href="https://github.com/jatin-wig" className="flex items-center gap-4 p-4 border border-gray-200 dark:border-gray-800 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
                 <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center text-gray-700 dark:text-gray-300">
                   <Github size={24} />
                 </div>

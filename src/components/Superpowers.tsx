@@ -7,9 +7,9 @@ const skills = [
   { name: 'NLP', icon: '💬' },
   { name: 'Computer Vision', icon: '👁️' },
   { name: 'TensorFlow', icon: '📊' },
-  { name: 'PyTorch', icon: '🔥' },
+  { name: 'NumPy', icon: '🔢' },
   { name: 'Scikit-learn', icon: '🧪' },
-  { name: 'LangChain', icon: '⛓️' },
+  { name: 'Data Analysis', icon: '🗂️' },
 ];
 
 const Superpowers = () => {
