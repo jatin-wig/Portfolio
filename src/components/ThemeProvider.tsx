@@ -1,34 +1,10 @@
+import { ThemeProvider as NextThemesProvider } from "next-themes"
+import { type ThemeProviderProps } from "next-themes/dist/types"
 
-import React, { createContext, useContext } from 'react';
-
-type ThemeContextType = {
-  theme: 'light';
-};
-
-const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
-
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  // Always use light theme
-  const theme = 'light';
-
-  // Apply theme to document
-  React.useEffect(() => {
-    const root = window.document.documentElement;
-    root.classList.remove('dark');
-    root.classList.add('light');
-  }, []);
-
-  return (
-    <ThemeContext.Provider value={{ theme }}>
-      {children}
-    </ThemeContext.Provider>
-  );
+export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+  return <NextThemesProvider {...props} defaultTheme="dark" forcedTheme="dark" enableSystem={false}>{children}</NextThemesProvider>
 }
 
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme must be used within a ThemeProvider');
-  }
-  return context;
-};
+// Re-export useTheme for convenience if needed, 
+// though direct import from next-themes is also fine.
+export { useTheme } from "next-themes"

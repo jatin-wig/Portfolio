@@ -7,6 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./components/ThemeProvider";
 import Mascot from "./components/Mascot";
 
+import ScrollToTop from "./components/ScrollToTop";
+import ScrollProgress from "./components/ScrollProgress";
+import { AnimatePresence } from "framer-motion";
+
 import Index from "./pages/Index";
 import SkillsPage from "./pages/SkillsPage";
 import ProjectsPage from "./pages/ProjectsPage";
@@ -26,19 +30,23 @@ const App = () => (
       <ThemeProvider>
         <Toaster />
         <Sonner />
+
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/skills" element={<SkillsPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/publications" element={<PublicationsPage />} />
-            <Route path="/volunteering" element={<VolunteeringPage />} />
-            <Route path="/education" element={<EducationPage />} />
-            <Route path="/experience" element={<ExperiencePage />} />
-            <Route path="/resume" element={<ResumePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <ScrollToTop />
+          <AnimatePresence mode="wait">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/skills" element={<SkillsPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/publications" element={<PublicationsPage />} />
+              <Route path="/volunteering" element={<VolunteeringPage />} />
+              <Route path="/education" element={<EducationPage />} />
+              <Route path="/experience" element={<ExperiencePage />} />
+              <Route path="/resume" element={<ResumePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AnimatePresence>
           <Mascot />
         </BrowserRouter>
       </ThemeProvider>

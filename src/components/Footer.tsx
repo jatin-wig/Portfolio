@@ -13,7 +13,7 @@ const Footer = () => {
               AI/ML expert focused on building intelligent systems that solve real-world problems.
             </p>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium mb-4">Quick Links</h3>
             <ul className="space-y-2">
@@ -28,22 +28,20 @@ const Footer = () => {
               <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-gray-400">📧 wigjatin2@gmail.com</li>
-              <li className="text-gray-400">🌏 Delhi, India</li>
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400">© 2025 Jatin Wig. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="https://linkedin.com/in/jatin-wig" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
-            <a href="https://github.com/wigjatin" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">Twitter</a>
+            <a href="https://github.com/jatin-wig" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
           </div>
         </div>
       </div>

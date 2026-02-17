@@ -64,15 +64,16 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
 				brand: {
-					purple: '#9b87f5',
-					'light-purple': '#E5DEFF',
-					'vivid-purple': '#8B5CF6',
+					purple: 'hsl(var(--primary))',
+					'light-purple': 'hsl(var(--primary) / 0.2)',
+					'vivid-purple': 'hsl(var(--primary))',
 					pink: '#FF719A',
 					'light-pink': '#FFDEE2',
 				},
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
+				heading: ['Outfit', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -95,12 +96,17 @@ export default {
 				'fade-out': {
 					'0%': { opacity: '1', transform: 'translateY(0)' },
 					'100%': { opacity: '0', transform: 'translateY(10px)' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.3s ease-out',
+				'float': 'float 6s ease-in-out infinite',
 			}
 		}
 	},

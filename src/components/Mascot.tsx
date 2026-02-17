@@ -44,9 +44,9 @@ const Mascot: React.FC = () => {
   // Show mascot with specific message
   const showMascot = (customMessage?: MascotMessage) => {
     if (visible) return; // Prevent multiple simultaneous messages
-    
+
     const messageToShow = customMessage || messages[Math.floor(Math.random() * messages.length)];
-    
+
     setMessage(messageToShow);
     setVisible(true);
 
@@ -94,29 +94,38 @@ const Mascot: React.FC = () => {
       {visible && message && (
         <motion.div
           initial={{ scale: 0, opacity: 0, x: 100, y: 100 }}
-          animate={{ 
-            scale: 1, 
-            opacity: 1, 
+          animate={{
+            scale: 1,
+            opacity: 1,
             x: 0,
             y: 0,
           }}
-          exit={{ 
-            scale: 0, 
-            opacity: 0, 
+          exit={{
+            scale: 0,
+            opacity: 0,
             x: 100,
             y: 100,
             transition: { duration: 0.8 }
           }}
-          transition={{ 
-            type: "spring", 
-            damping: 15, 
+          transition={{
+            type: "spring",
+            damping: 15,
             stiffness: 300,
           }}
-          className="fixed bottom-8 right-8 z-50 pointer-events-none"
+          className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-50 pointer-events-auto"
         >
           {/* Main Character Container */}
           <div className="relative flex flex-col items-center">
-            
+
+            {/* Close Button */}
+            <button
+              onClick={(e) => { e.stopPropagation(); setVisible(false); }}
+              className="absolute -top-2 -right-2 bg-white text-gray-500 rounded-full p-1 shadow-md hover:bg-red-50 hover:text-red-500 transition-colors z-[60]"
+              aria-label="Close Mascot"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+
             {/* Speech bubble */}
             <motion.div
               initial={{ scale: 0, y: 20 }}
@@ -127,9 +136,9 @@ const Mascot: React.FC = () => {
               {/* Speech bubble arrow pointing down */}
               <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[15px] border-r-[15px] border-t-[15px] border-l-transparent border-r-transparent border-t-white"></div>
               <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-[15px] border-r-[15px] border-t-[15px] border-l-transparent border-r-transparent border-t-gray-200"></div>
-              
+
               <div className="flex items-center gap-4 text-gray-800">
-                <motion.span 
+                <motion.span
                   className="text-2xl"
                   animate={{ scale: [1, 1.2, 1], rotate: [0, 10, -10, 0] }}
                   transition={{ duration: 2, repeat: Infinity }}
@@ -141,13 +150,15 @@ const Mascot: React.FC = () => {
             </motion.div>
 
             {/* Enhanced Animated Character Body with Custom Avatar */}
-            <motion.div 
-              className={`relative ${message.color} rounded-full p-4 shadow-2xl border-4 border-white`}
-              animate={{ 
+            <motion.div
+              className={`relative ${message.color} rounded-full p-4 shadow-2xl border-4 border-white cursor-pointer hover:scale-105 transition-transform`}
+              onClick={() => showMascot()}
+              whileHover={{ rotate: [0, -5, 5, 0] }}
+              animate={{
                 y: [0, -15, 0],
                 rotate: [0, 5, -5, 0]
               }}
-              transition={{ 
+              transition={{
                 duration: 3,
                 repeat: Infinity,
                 ease: "easeInOut"
@@ -155,16 +166,16 @@ const Mascot: React.FC = () => {
             >
               {/* Glowing aura effect */}
               <div className="absolute inset-0 rounded-full opacity-40 animate-pulse bg-white/50 blur-sm"></div>
-              
+
               {/* Custom Avatar Face Based on Your Features */}
               <motion.div
-                animate={{ 
+                animate={{
                   scale: [1, 1.05, 1],
                 }}
-                transition={{ 
-                  duration: 2, 
-                  repeat: Infinity, 
-                  ease: "easeInOut" 
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
                 className="relative z-10 w-20 h-20 rounded-full overflow-hidden border-4 border-white shadow-lg bg-gradient-to-br from-amber-100 to-orange-200"
               >
@@ -172,47 +183,47 @@ const Mascot: React.FC = () => {
                 <div className="w-full h-full relative">
                   {/* Hair */}
                   <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-gray-800 to-gray-700 rounded-t-full"></div>
-                  
+
                   {/* Forehead */}
                   <div className="absolute top-8 left-0 w-full h-6 bg-gradient-to-b from-amber-200 to-orange-200"></div>
-                  
+
                   {/* Eyes */}
-                  <motion.div 
+                  <motion.div
                     className="absolute top-10 left-3 w-2 h-2 bg-gray-800 rounded-full"
                     animate={{ scaleY: [1, 0.1, 1] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   />
-                  <motion.div 
+                  <motion.div
                     className="absolute top-10 right-3 w-2 h-2 bg-gray-800 rounded-full"
                     animate={{ scaleY: [1, 0.1, 1] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   />
-                  
+
                   {/* Eyebrows */}
                   <div className="absolute top-9 left-3 w-2.5 h-0.5 bg-gray-700 rounded"></div>
                   <div className="absolute top-9 right-3 w-2.5 h-0.5 bg-gray-700 rounded"></div>
-                  
+
                   {/* Nose */}
                   <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-1 h-2 bg-orange-300 rounded"></div>
-                  
+
                   {/* Mouth */}
-                  <motion.div 
+                  <motion.div
                     className="absolute top-14 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-red-400 rounded-full"
                     animate={{ scaleX: [1, 1.2, 1] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                   />
-                  
+
                   {/* Facial Hair/Stubble */}
                   <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-3 bg-gray-600 opacity-30 rounded-b-full"></div>
                 </div>
-                
+
                 {/* Animated overlay for liveliness */}
                 <motion.div
                   className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-white/10"
-                  animate={{ 
+                  animate={{
                     opacity: [0, 0.2, 0],
                   }}
-                  transition={{ 
+                  transition={{
                     duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut"
@@ -223,7 +234,7 @@ const Mascot: React.FC = () => {
               {/* Enhanced Animated Arms */}
               <motion.div
                 className="absolute -left-10 top-1/2 transform -translate-y-1/2 text-3xl"
-                animate={{ 
+                animate={{
                   rotate: [0, 25, -25, 0],
                   scale: [1, 1.1, 1]
                 }}
@@ -234,7 +245,7 @@ const Mascot: React.FC = () => {
 
               <motion.div
                 className="absolute -right-10 top-1/2 transform -translate-y-1/2 text-3xl"
-                animate={{ 
+                animate={{
                   rotate: [0, -25, 25, 0],
                   scale: [1, 1.1, 1]
                 }}
@@ -246,8 +257,8 @@ const Mascot: React.FC = () => {
               {/* Enhanced sparkle effects */}
               <motion.div
                 className="absolute -top-6 -right-6 text-yellow-300 text-3xl"
-                animate={{ 
-                  scale: [1, 1.5, 1], 
+                animate={{
+                  scale: [1, 1.5, 1],
                   rotate: [0, 360, 720],
                   y: [0, -15, 0]
                 }}
@@ -258,8 +269,8 @@ const Mascot: React.FC = () => {
 
               <motion.div
                 className="absolute -bottom-4 -left-4 text-yellow-300 text-2xl"
-                animate={{ 
-                  scale: [1, 1.3, 1], 
+                animate={{
+                  scale: [1, 1.3, 1],
                   opacity: [1, 0.5, 1],
                   x: [0, 10, 0],
                   rotate: [0, 180, 360]
@@ -271,8 +282,8 @@ const Mascot: React.FC = () => {
 
               <motion.div
                 className="absolute top-2 left-2 text-yellow-300 text-xl"
-                animate={{ 
-                  scale: [1, 1.4, 1], 
+                animate={{
+                  scale: [1, 1.4, 1],
                   rotate: [0, 180, 360],
                   opacity: [1, 0.7, 1]
                 }}
@@ -284,7 +295,7 @@ const Mascot: React.FC = () => {
               {/* Additional floating elements */}
               <motion.div
                 className="absolute -top-8 left-1/2 transform -translate-x-1/2 text-2xl"
-                animate={{ 
+                animate={{
                   y: [0, -20, 0],
                   opacity: [0.7, 1, 0.7],
                   scale: [1, 1.2, 1]

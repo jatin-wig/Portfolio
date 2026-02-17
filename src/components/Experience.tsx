@@ -32,15 +32,15 @@ const experiences = [
       impact: "Enabled global users to discover hidden buyers and sellers of niche commodities with AI assistance. The system provided instant commodity price estimates and intelligent trade insights, accelerating user decision-making and reducing manual research efforts.",
       detailed: [
         "▸ AI Price Prediction System: The AI-powered price prediction system was developed using a data-driven approach where historical price data, contributed by users, was utilized to train machine learning models. This system helps predict the price of various commodities based on regional price data provided by users, allowing both buyers and sellers to estimate fair trade prices instantly. By utilizing Random Forest models, the prediction system accounts for fluctuations in commodity prices across different regions, ensuring accurate and relevant price estimates. The system is crucial in a global trade network, where price transparency and real-time updates are essential for efficient trading.",
-        
+
         "▸ Automated Data Cleaning Pipeline: The dataset provided for commodity trade was complex, unstructured, and inconsistent, making it a challenge to extract meaningful insights. This feature involved developing an automated data cleaning pipeline using pandas, LLM-based interpretation, and traditional data processing methods. The pipeline performs several tasks such as deduplication, null value imputation, and normalizing product descriptions to ensure consistency. Additionally, it involved categorizing the data into buyers and sellers based on provided details, ensuring a clean dataset for accurate analysis and matching. This feature effectively cleaned lakhs of mixed records, making it easier to search and match buyer and seller data efficiently.",
-        
+
         "▸ FastAPI-Based Buyer/Seller Search Algorithm: This feature focuses on an intelligent search system built using FastAPI that allows users to find relevant buyers and sellers based on a simple keyword query. By analyzing product names, descriptions, and countries, the system uses basic NLP rules to extract keywords and matches them against a database of buyers and sellers. When users search for a commodity, they are instantly provided with a list of matching buyers and sellers based on product and country relevance. This feature speeds up the process of finding trading opportunities and is vital for increasing trade efficiency and engagement across different regions.",
-        
+
         "▸ Semantic Tag Generation Using spaCy & GloVe: This feature leverages NLP to automatically generate relevant tags for products based on their descriptions. By using spaCy for tokenizing and analyzing text and GloVe word embeddings for semantic similarity, the system identifies key product features and generates a set of tags that best represent the product. For example, for a product description that mentions 'olive oil,' the system can automatically add tags like 'oil,' 'olive,' and even synonyms like 'vegetable oil.' This enhances the dataset with more comprehensive metadata and allows for easier filtering and discovery of relevant products, even when descriptions are vague or incomplete.",
-        
+
         "▸ AI-Powered Product Recommendation System: The product recommendation system was designed to improve user experience by suggesting relevant products based on user queries. This system uses GloVe embeddings and spaCy to compute vector representations of product titles and match them with user input. By calculating the cosine similarity between query embeddings and product embeddings, the system recommends top similar products. The more the user interacts with the system, the better the recommendations become, allowing them to discover new commodities or suppliers that best meet their needs. This feature enhances the trading experience, increasing the likelihood of successful trades.",
-        
+
         "▸ Full Backend Integration with React Frontend: In this feature, all the backend AI-powered functionalities were integrated seamlessly into the frontend application built using React. The integration ensured that users could interact with the platform without disrupting the existing UI or user flows. Using FastAPI endpoints, the React frontend was connected to the backend, enabling real-time search results, price predictions, and product recommendations. This end-to-end integration provided a smooth and interactive user experience, making it easy for users to access AI-driven insights directly through the application. By maintaining the existing UI structure, the integration ensured that the system's functionality was enhanced without requiring a major redesign.",
       ],
     }
@@ -137,24 +137,24 @@ const Experience = () => {
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="text-4xl font-bold text-center mb-2 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple"
         >
           Real-World AI Work
         </motion.h2>
-        <motion.p 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="text-gray-600 text-center mb-12 text-lg"
         >
           Where I've applied my skills to solve real business problems.
         </motion.p>
 
-        <motion.div 
+        <motion.div
           className="relative"
           variants={containerVariants}
           initial="hidden"
@@ -162,12 +162,12 @@ const Experience = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {experiences.map((exp, index) => (
-            <motion.div 
-              key={index} 
+            <motion.div
+              key={index}
               className="timeline-item"
               variants={itemVariants}
             >
-              <motion.div 
+              <motion.div
                 className="mb-8 bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -181,9 +181,9 @@ const Experience = () => {
                     <img src={exp.logo} alt="Company logo" className="w-full h-full object-cover rounded-full" />
                   </div>
                 </div>
-                
+
                 <p className="mt-4 text-gray-700">{exp.description}</p>
-                
+
                 <div className="mt-4 p-4 bg-green-50 rounded-md border border-green-100 text-green-700">
                   {exp.achievements.map((achievement, i) => (
                     <div key={i} className="flex items-start mb-2 last:mb-0">
@@ -192,18 +192,18 @@ const Experience = () => {
                     </div>
                   ))}
                 </div>
-                
-                <Button 
-                  variant="outline" 
+
+                <Button
+                  variant="outline"
                   size="sm"
-                  className="mt-4 flex items-center gap-1 rounded-full border-brand-purple text-brand-purple hover:bg-brand-light-purple" 
+                  className="mt-4 flex items-center gap-1 rounded-full border-none bg-purple-100 text-black font-semibold hover:bg-purple-200 transition-colors"
                   onClick={() => toggleExpand(index)}
                 >
                   <Info size={16} />
                   {expandedIndex === index ? "Hide Details" : "View Details"}
                 </Button>
-                
-                <motion.div 
+
+                <motion.div
                   variants={detailsVariants}
                   initial="hidden"
                   animate={expandedIndex === index ? "visible" : "hidden"}
@@ -213,9 +213,9 @@ const Experience = () => {
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
                         <div className="mb-6 overflow-hidden rounded-lg shadow-md">
-                          <img 
-                            src={exp.image} 
-                            alt={`${exp.company} project visualization`} 
+                          <img
+                            src={exp.image}
+                            alt={`${exp.company} project visualization`}
                             className="w-full h-48 object-cover hover:scale-105 transition-transform duration-500"
                           />
                         </div>
@@ -230,15 +230,15 @@ const Experience = () => {
                         <h4 className="font-semibold text-lg mb-3 text-gray-800">Technologies Used</h4>
                         <div className="flex flex-wrap gap-2 mb-6">
                           {exp.details.technologies.map((tech, i) => (
-                            <span key={i} className="px-3 py-1.5 bg-gradient-to-r from-brand-light-purple to-brand-purple/20 text-brand-purple text-sm rounded-full transition-all hover:shadow-md">
+                            <span key={i} className="px-3 py-1.5 bg-purple-200 text-black text-sm font-bold rounded-full transition-all hover:shadow-md border border-purple-300">
                               {tech}
                             </span>
                           ))}
                         </div>
-                        
+
                         <h4 className="font-semibold text-lg mb-3 text-gray-800">Challenges & Solutions</h4>
                         <p className="text-gray-700 mb-6">{exp.details.challenges}</p>
-                        
+
                         <h4 className="font-semibold text-lg mb-3 text-gray-800">Business Impact</h4>
                         <p className="text-gray-700">{exp.details.impact}</p>
                       </div>
@@ -280,7 +280,7 @@ const Experience = () => {
             Virtual learning experiences that shaped my technical foundation.
           </p>
 
-          <motion.div 
+          <motion.div
             className="space-y-6"
             variants={containerVariants}
             initial="hidden"
@@ -288,7 +288,7 @@ const Experience = () => {
             viewport={{ once: true, margin: "-100px" }}
           >
             {virtualInternships.map((internship, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 variants={itemVariants}
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300"
@@ -303,9 +303,9 @@ const Experience = () => {
                     <img src={internship.logo} alt={`${internship.company} logo`} className="w-8 h-8 object-contain" />
                   </div>
                 </div>
-                
+
                 <p className="text-gray-700 mb-4">{internship.description}</p>
-                
+
                 <div className="mb-4 p-4 bg-blue-50 rounded-md border border-blue-100 text-blue-700">
                   {internship.achievements.map((achievement, i) => (
                     <div key={i} className="flex items-start mb-2 last:mb-0">
@@ -323,10 +323,10 @@ const Experience = () => {
                   ))}
                 </div>
 
-                <Button 
-                  variant="outline" 
+                <Button
+                  variant="outline"
                   size="sm"
-                  className="flex items-center gap-2 rounded-full border-blue-500 text-blue-600 hover:bg-blue-50" 
+                  className="flex items-center gap-2 rounded-full border-blue-500 text-blue-600 hover:bg-blue-50"
                   onClick={() => window.open(internship.certificateUrl, '_blank')}
                 >
                   <ExternalLink size={16} />

@@ -11,8 +11,8 @@ import {
 const volunteeringExperiences = [
   {
     id: 1,
-    organization: "Google Developer Group Abu Dhabi",
-    role: "Technical Contributor",
+    organization: "Google Developer Group Abu Dhabi & Sharjah",
+    role: "Organiser",
     location: "Abu Dhabi, UAE",
     period: "May 2025 - Present",
     description: "Contributing to the tech community by organizing events, workshops, and knowledge sharing sessions. Helping developers connect and learn about Google technologies and best practices.",
@@ -65,13 +65,13 @@ const Volunteering = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="text-center mb-16"
         >
-          <motion.h2 
+          <motion.h2
             variants={itemVariants}
             className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple"
           >
             Volunteering & Community
           </motion.h2>
-          <motion.p 
+          <motion.p
             variants={itemVariants}
             className="text-gray-600 text-lg max-w-3xl mx-auto"
           >
@@ -98,8 +98,8 @@ const Volunteering = () => {
                   <CardHeader className="bg-gradient-to-r from-brand-light-purple/20 to-brand-purple/10 pb-4">
                     <div className="flex items-start justify-between mb-3">
                       <div className="flex items-center gap-3">
-                        <div className="p-2 bg-brand-purple/10 rounded-full">
-                          <IconComponent className="h-6 w-6 text-brand-purple" />
+                        <div className="p-2 bg-purple-200 rounded-full">
+                          <IconComponent className="h-6 w-6 text-black" />
                         </div>
                         <div>
                           <CardTitle className="text-xl leading-tight text-gray-800">
@@ -111,7 +111,7 @@ const Volunteering = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="flex items-center gap-4 text-sm text-gray-600">
                       <div className="flex items-center gap-1">
                         <MapPin className="h-4 w-4" />
@@ -123,20 +123,20 @@ const Volunteering = () => {
                       </div>
                     </div>
                   </CardHeader>
-                  
+
                   <CardContent className="pt-6">
                     <p className="text-gray-600 leading-relaxed mb-6">
                       {experience.description}
                     </p>
-                    
+
                     <div>
                       <h4 className="font-semibold text-gray-800 mb-3">Key Activities</h4>
                       <div className="flex gap-2 flex-wrap">
                         {experience.activities.map((activity) => (
-                          <motion.span 
-                            key={activity} 
+                          <motion.span
+                            key={activity}
                             className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-50 text-gray-700 text-sm rounded-full border border-gray-200"
-                            whileHover={{ 
+                            whileHover={{
                               scale: 1.05,
                               backgroundColor: "#f9f5ff"
                             }}

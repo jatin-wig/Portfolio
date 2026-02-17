@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Github, ExternalLink, Eye, ChevronLeft, ChevronRight, Info } from 'lucide-react';
+import { Github, ExternalLink, Eye, ChevronLeft, ChevronRight, Info, Youtube } from 'lucide-react';
 import { Button } from './ui/button';
 import {
   Card,
@@ -56,7 +56,8 @@ const projects = [
     githubUrl: "https://github.com/wigjatin/Brain-Tumor-Detection",
     demoUrl: "https://braintumordetectionjatinwig.streamlit.app/",
     comment: "Nothing felt more powerful than teaching a model to spot tumors with 98% accuracy.",
-    details: "This project uses VGG16-based transfer learning to classify brain MRI scans into glioma, meningioma, pituitary tumors, or no tumor. The model was trained on a dataset of over 2800 images, augmented for robustness, and fine-tuned using custom classification layers. It achieved 98% accuracy on test data with balanced precision and recall. A Streamlit web app provides an intuitive interface for real-time prediction. Designed to support medical professionals by offering fast, reliable tumor detection in MRI images."
+    details: "This project uses VGG16-based transfer learning to classify brain MRI scans into glioma, meningioma, pituitary tumors, or no tumor. The model was trained on a dataset of over 2800 images, augmented for robustness, and fine-tuned using custom classification layers. It achieved 98% accuracy on test data with balanced precision and recall. A Streamlit web app provides an intuitive interface for real-time prediction. Designed to support medical professionals by offering fast, reliable tumor detection in MRI images.",
+    youtubeUrl: "https://www.youtube.com/watch?v=99SklHe7cYw"
   },/*
   {
     id: 3,
@@ -82,7 +83,8 @@ const projects = [
     githubUrl: "https://github.com/jatin-wig/Small-Language-Model-from-scratch",
     demoUrl: "#",
     comment: "Turns out building a language model from scratch teaches you more than just tokens, it teaches patience.",
-    details: "This project implements a Small Language Model completely from scratch using PyTorch, without relying on high-level training frameworks. It features a decoder-only Transformer architecture designed for efficient sequence modeling and autoregressive text generation. The training pipeline includes an optimized memmap data loader for handling large datasets, mixed-precision training for faster computation and reduced memory usage, and cosine learning rate scheduling for stable convergence. The model demonstrates a deep understanding of transformer internals, training mechanics, and scalable NLP system design."
+    details: "This project implements a Small Language Model completely from scratch using PyTorch, without relying on high-level training frameworks. It features a decoder-only Transformer architecture designed for efficient sequence modeling and autoregressive text generation. The training pipeline includes an optimized memmap data loader for handling large datasets, mixed-precision training for faster computation and reduced memory usage, and cosine learning rate scheduling for stable convergence. The model demonstrates a deep understanding of transformer internals, training mechanics, and scalable NLP system design.",
+    youtubeUrl: "#"
   },
   {
     id: 5,
@@ -95,7 +97,8 @@ const projects = [
     githubUrl: "https://github.com/wigjatin/spam-detector-large-scale",
     demoUrl: "https://spam-detection-jatin-wig.streamlit.app/",
     comment: "Never thought I'd get excited over a message being labeled 'spam' — here we are.",
-    details: "This spam detection system uses Natural Language Processing (NLP) and machine learning to accurately classify messages as spam or not spam. It leverages TF-IDF vectorization and the Multinomial Naive Bayes algorithm, focusing on high precision to avoid false positives. The model is trained on real-world datasets and includes a prediction script for real-time message filtering."
+    details: "This spam detection system uses Natural Language Processing (NLP) and machine learning to accurately classify messages as spam or not spam. It leverages TF-IDF vectorization and the Multinomial Naive Bayes algorithm, focusing on high precision to avoid false positives. The model is trained on real-world datasets and includes a prediction script for real-time message filtering.",
+    youtubeUrl: "https://www.youtube.com/watch?v=CEqrNU5ZLVI"
   },
   {
     id: 6,
@@ -109,6 +112,7 @@ const projects = [
     demoUrl: "#",
     comment: "Because sometimes a second pair of AI eyes can spot what human emotions miss.",
     details: "TradeValidator AI is a vision-powered trading intelligence platform that analyzes chart screenshots to produce professional, structured trade insights. Leveraging multimodal AI, the system evaluates market structure, trade validity, entry quality, and potential risk conditions to support more informed decision-making. The platform focuses on objective analysis rather than prediction, helping traders reduce emotional bias while reviewing setups. Built with scalability in mind, it demonstrates practical applications of computer vision and large language models within the fintech space. This tool is strictly intended for educational and informational purposes only and does not provide financial advice.",
+    youtubeUrl: "https://www.youtube.com/watch?v=HjinGwvfGeQ"
   },
   {
     id: 7,
@@ -121,7 +125,8 @@ const projects = [
     githubUrl: "https://github.com/jatin-wig/Food-Delivery-Customer-Support",
     demoUrl: "#",
     comment: "Turns customer chaos into structured conversations — automatically.",
-    details: "The AI Food Delivery Support System is an intelligent platform designed to replicate real-world customer support operations within a food delivery ecosystem. It combines deterministic backend workflows with large language model intelligence to manage the complete order lifecycle — including ETA estimation, cancellations, refunds, and dynamic customer interactions. Built using FastAPI for high-performance APIs, Streamlit for an interactive interface, and SQLite for lightweight data persistence, the system demonstrates production-style architecture and orchestration. By blending rule-based logic with conversational AI, the project showcases how modern support platforms can scale efficiently while maintaining contextual, human-like communication."
+    details: "The AI Food Delivery Support System is an intelligent platform designed to replicate real-world customer support operations within a food delivery ecosystem. It combines deterministic backend workflows with large language model intelligence to manage the complete order lifecycle — including ETA estimation, cancellations, refunds, and dynamic customer interactions. Built using FastAPI for high-performance APIs, Streamlit for an interactive interface, and SQLite for lightweight data persistence, the system demonstrates production-style architecture and orchestration. By blending rule-based logic with conversational AI, the project showcases how modern support platforms can scale efficiently while maintaining contextual, human-like communication.",
+    youtubeUrl: "https://www.youtube.com/watch?v=BA6S7_kaFD0"
   },
   {
     id: 8,
@@ -134,7 +139,8 @@ const projects = [
     githubUrl: "https://github.com/wigjatin/House-prediction-model/tree/main",
     demoUrl: "https://house-prediction-model-jatin-wig.streamlit.app/",
     comment: "Taught a model to value homes — it doesn't even have one.",
-    details: "This project applies Gradient Boosting Regression to predict property values using historical sales data and structural attributes like square footage, quality rating, and year built. The pipeline includes robust preprocessing with outlier filtering, feature scaling, and log-transformed targets for improved accuracy. It models complex, non-linear feature interactions and outputs highly reliable estimates, making it useful for buyers, sellers, and agents alike."
+    details: "This project applies Gradient Boosting Regression to predict property values using historical sales data and structural attributes like square footage, quality rating, and year built. The pipeline includes robust preprocessing with outlier filtering, feature scaling, and log-transformed targets for improved accuracy. It models complex, non-linear feature interactions and outputs highly reliable estimates, making it useful for buyers, sellers, and agents alike.",
+    youtubeUrl: "https://www.youtube.com/watch?v=SEAnfUnSGbU"
   },
   {
     id: 9,
@@ -147,20 +153,22 @@ const projects = [
     githubUrl: "https://github.com/jatin-wig/Document-Intelligence-PDF-Chat-with-Ollama",
     demoUrl: "#",
     comment: "Your documents shouldn’t just sit there, they should be able to talk back.",
-    details: "Document Intelligence — PDF Chat is a production-style Retrieval-Augmented Generation (RAG) system designed for fully local inference, enabling secure and private conversational interactions with PDF documents. The application ingests structured documents, generates high-quality vector embeddings using HuggingFace Sentence Transformers, and performs semantic retrieval through FAISS. With Maximum Marginal Relevance (MMR) optimization, the system enhances context diversity while minimizing redundancy in retrieved chunks. Powered by a locally hosted Llama3 model via Ollama, it eliminates reliance on external LLM APIs while maintaining strong reasoning capabilities. Built with LangChain for orchestration and Streamlit for an interactive UI, the project reflects real-world GenAI architecture focused on privacy, performance, and scalable document intelligence workflows."
+    details: "Document Intelligence — PDF Chat is a production-style Retrieval-Augmented Generation (RAG) system designed for fully local inference, enabling secure and private conversational interactions with PDF documents. The application ingests structured documents, generates high-quality vector embeddings using HuggingFace Sentence Transformers, and performs semantic retrieval through FAISS. With Maximum Marginal Relevance (MMR) optimization, the system enhances context diversity while minimizing redundancy in retrieved chunks. Powered by a locally hosted Llama3 model via Ollama, it eliminates reliance on external LLM APIs while maintaining strong reasoning capabilities. Built with LangChain for orchestration and Streamlit for an interactive UI, the project reflects real-world GenAI architecture focused on privacy, performance, and scalable document intelligence workflows.",
+    youtubeUrl: "https://www.youtube.com/watch?v=taKxQnO6HM0"
   },
   {
     id: 10,
     title: "YouTube Transcript Chatbot",
     description: "GenAI chatbot that enables conversational querying over YouTube videos by transforming transcripts into a searchable knowledge base.",
     image: "/lovable-uploads/youtube.png",
-    category: "Hard", 
+    category: "Hard",
     type: "GenAI",
     technologies: ["Python", "Streamlit", "LangChain", "FAISS", "Sentence Transformers", "Google Gemini", "youtube-transcript-api"],
     githubUrl: "https://github.com/jatin-wig/Youtube-Transcription-Gen-AI",
     demoUrl: "#",
     comment: "Because watching a 2-hour video for one answer is inefficient , querying it is smarter.",
-    details: "The YouTube Transcript Chatbot is a Streamlit-based generative AI application that allows users to chat with any YouTube video using its transcript as the knowledge source. The system automatically extracts transcripts with timestamps, converts them into vector embeddings, and stores them in FAISS for high-speed semantic retrieval. Built on a Retrieval-Augmented Generation (RAG) pipeline with LangChain, it generates grounded responses through Google Gemini while maintaining full conversational memory. The application enhances transparency by displaying sources for each answer and dynamically generating clickable timestamp links that redirect users to the exact moment in the video. This project demonstrates strong capabilities in RAG architecture, vector search optimization, conversational context handling, and production-style GenAI application design."
+    details: "The YouTube Transcript Chatbot is a Streamlit-based generative AI application that allows users to chat with any YouTube video using its transcript as the knowledge source. The system automatically extracts transcripts with timestamps, converts them into vector embeddings, and stores them in FAISS for high-speed semantic retrieval. Built on a Retrieval-Augmented Generation (RAG) pipeline with LangChain, it generates grounded responses through Google Gemini while maintaining full conversational memory. The application enhances transparency by displaying sources for each answer and dynamically generating clickable timestamp links that redirect users to the exact moment in the video. This project demonstrates strong capabilities in RAG architecture, vector search optimization, conversational context handling, and production-style GenAI application design.",
+    youtubeUrl: "https://www.youtube.com/watch?v=N2HJ-i1qreA"
   },
   {
     id: 11,
@@ -173,21 +181,23 @@ const projects = [
     githubUrl: "https://github.com/jatin-wig/Resume-Job-Assistant-Gen-AI-",
     demoUrl: "#",
     comment: "Your resume deserves better odds.",
-    details: "Resume + Job Assistant is a generative AI platform designed to streamline the job application process through intelligent resume analysis. Users can upload a resume PDF and compare it against a job description to receive ATS-focused optimization tips, keyword gap analysis, alignment insights, and actionable resume improvements. The system also generates job-specific cover letters by synthesizing resume data with role requirements. Powered by Google Gemini and delivered through a clean Streamlit interface with dedicated feature tabs, the application demonstrates practical LLM orchestration, structured prompt design, and real-world NLP workflows aimed at increasing application effectiveness."
+    details: "Resume + Job Assistant is a generative AI platform designed to streamline the job application process through intelligent resume analysis. Users can upload a resume PDF and compare it against a job description to receive ATS-focused optimization tips, keyword gap analysis, alignment insights, and actionable resume improvements. The system also generates job-specific cover letters by synthesizing resume data with role requirements. Powered by Google Gemini and delivered through a clean Streamlit interface with dedicated feature tabs, the application demonstrates practical LLM orchestration, structured prompt design, and real-world NLP workflows aimed at increasing application effectiveness.",
+    youtubeUrl: "https://youtu.be/I67IT8pcW9A"
   },
-  /*{
+  {
     id: 12,
-    title: "Smart Home Energy Optimizer",
-    description: "IoT-connected system that optimizes home energy usage using predictive analytics.",
-    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-    category: "Medium",
+    title: "Twitter Sentiment Analysis",
+    description: "Lightweight NLP-powered system that classifies tweets into positive or negative sentiments using Logistic Regression",
+    image: "/lovable-uploads/twitter.png",
+    category: "Hard",
     type: "Core AI / ML / NLP",
-    technologies: ["TensorFlow", "IoT", "Time Series Analysis"],
-    githubUrl: "#",
-    demoUrl: "#",
-    comment: "Cut my electricity bill in half while still keeping the house comfortable!",
-    details: "This system connects to smart home devices to monitor and optimize energy usage throughout the day. Using predictive analytics and reinforcement learning, it learns occupants' preferences and schedules to minimize energy consumption without sacrificing comfort. The system accounts for weather forecasts, electricity pricing, and user feedback to continuously improve its optimization algorithms."
-  },*/
+    technologies: ["Python", "NLP", "Logistic Regression", "TF-IDF", "Scikit-learn", "Streamlit"],
+    githubUrl: "https://github.com/jatin-wig/Twitter-Sentiment-Analysis",
+    demoUrl: "https://twitter-sentiment-analysis-by-jatinwig.streamlit.app/",
+    comment: "Transforming chaotic tweets into clear sentiment insights!",
+    details: "This project is a lightweight NLP-powered sentiment analysis system designed to classify tweets as either positive or negative. It uses TF-IDF vectorization to convert text into meaningful numerical features and applies a Logistic Regression model for fast, interpretable predictions. The preprocessing pipeline includes tokenization, normalization, and stopword removal to improve model accuracy. Deployed as an interactive Streamlit web app, the system enables real-time tweet analysis, making it valuable for businesses tracking customer feedback, researchers studying public opinion, and individuals seeking structured insights from social media data.",
+    youtubeUrl: "https://www.youtube.com/watch?v=GTBRKzo82yw"
+  },
   {
     id: 13,
     title: "Placement Prediction System",
@@ -199,21 +209,10 @@ const projects = [
     githubUrl: "https://github.com/wigjatin/Student---Placement--Prediction-/tree/main",
     demoUrl: "https://student-placement-prediction-jatin-wig.streamlit.app/",
     comment: "Interview anxiety meets predictive analytics.",
-    details: "This application uses a Logistic Regression model trained on historical student data to predict whether a student is likely to be placed. It takes inputs such as academic performance, work experience, and degree specialization to estimate placement probability. The app offers a clean and interactive Streamlit interface, making it useful for students, counselors, and career services to assess employability based on quantitative factors. The model was built with scikit-learn and deployed using joblib for efficient performance."
+    details: "This application uses a Logistic Regression model trained on historical student data to predict whether a student is likely to be placed. It takes inputs such as academic performance, work experience, and degree specialization to estimate placement probability. The app offers a clean and interactive Streamlit interface, making it useful for students, counselors, and career services to assess employability based on quantitative factors. The model was built with scikit-learn and deployed using joblib for efficient performance.",
+    youtubeUrl: "https://www.youtube.com/watch?v=9r151tjA4eg"
   },
-  {
-    id: 14,
-    title: "Twitter Sentiment Analysis",
-    description: "Logistic Regression & NLP project that classifies tweets into positive or negative sentiments.",
-    image: "/lovable-uploads/twitter.png",
-    category: "Medium",
-    type: "Core AI / ML / NLP",
-    technologies: ["Logistic Regression", "NLTK", "Streamlit"],
-    githubUrl: "https://github.com/wigjatin/Twitter-Sentiment-Analysis",
-    demoUrl: "https://twitter-sentiment-analysis-by-jatinwig.streamlit.app/",
-    comment: "Predicts sentiment faster than people get offended",
-    details: "This project applies Natural Language Processing (NLP) techniques to classify tweets into positive or negative sentiments. Using Logistic Regression along with preprocessing steps such as tokenization, stopword removal, and TF-IDF vectorization, the model achieves reliable performance on real-world Twitter data. A Streamlit-based web app provides an interactive interface where users can input tweets and instantly see sentiment predictions."
-  },
+
   /*{
     id: 15,
     title: "Music Genre Classifier",
@@ -375,21 +374,51 @@ const projects = [
 const Projects = () => {
   const [activeType, setActiveType] = useState("GenAI");
   const [activeCategory, setActiveCategory] = useState("All");
-  const [viewingProject, setViewingProject] = useState(null);
-  const [carouselApi, setCarouselApi] = useState(null);
-  const [currentPage, setCurrentPage] = useState(0);
-  const [projectDetails, setProjectDetails] = useState(null);
 
   const filteredProjects = projects
     .filter(project => project.type === activeType)
     .filter(project => activeCategory === "All" ? true : project.category === activeCategory);
+  const [viewingProject, setViewingProject] = useState(null);
+  const [carouselApi, setCarouselApi] = useState(null);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
-  const totalPages = Math.ceil(filteredProjects.length / 3);
+  useEffect(() => {
+    if (!carouselApi) return;
+
+    setTotalPages(carouselApi.scrollSnapList().length);
+    setCurrentPage(carouselApi.selectedScrollSnap());
+
+    const onSelect = () => {
+      setCurrentPage(carouselApi.selectedScrollSnap());
+    };
+
+    const onReInit = () => {
+      setTotalPages(carouselApi.scrollSnapList().length);
+      setCurrentPage(carouselApi.selectedScrollSnap());
+    };
+
+    carouselApi.on("select", onSelect);
+    carouselApi.on("reInit", onReInit);
+
+    // Custom Autoplay Logic
+    const autoplayInterval = setInterval(() => {
+      if (!isPaused && carouselApi) {
+        carouselApi.scrollNext();
+      }
+    }, 4000); // 4 seconds interval
+
+    return () => {
+      carouselApi.off("select", onSelect);
+      carouselApi.off("reInit", onReInit);
+      clearInterval(autoplayInterval);
+    };
+  }, [carouselApi, isPaused]);
 
   useEffect(() => {
     if (carouselApi) {
       carouselApi.scrollTo(0);
-      setCurrentPage(0);
     }
   }, [activeType, activeCategory, carouselApi]);
 
@@ -423,32 +452,30 @@ const Projects = () => {
   const handleNext = () => {
     if (carouselApi) {
       carouselApi.scrollNext();
-      setCurrentPage(prev => Math.min(prev + 1, totalPages - 1));
     }
   };
 
   const handlePrevious = () => {
     if (carouselApi) {
       carouselApi.scrollPrev();
-      setCurrentPage(prev => Math.max(prev - 1, 0));
     }
   };
 
   return (
     <section className="py-16 px-6 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
-        <motion.h2 
-          initial={{ opacity: 0, y: -20 }} 
-          animate={{ opacity: 1, y: 0 }} 
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, type: "spring", damping: 15 }}
-          className="text-4xl font-bold text-center mb-2 text-gray-800 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple"
+          className="text-4xl md:text-5xl font-bold text-center mb-4 text-gradient font-heading tracking-tight"
         >
           My AI Projects
         </motion.h2>
-        
-        <motion.p 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2, type: "spring", damping: 20 }}
           className="text-gray-600 text-center mb-8 text-lg"
         >
@@ -456,62 +483,50 @@ const Projects = () => {
         </motion.p>
 
         {/* Project Type Tabs */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-8"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3, type: "spring", damping: 20 }}
         >
-          <ToggleGroup 
-            type="single" 
+          <ToggleGroup
+            type="single"
             value={activeType}
             onValueChange={(value) => value && setActiveType(value)}
-            className="flex gap-3 p-1.5 bg-white rounded-full shadow-lg border border-gray-200"
+            className="flex gap-2 p-1.5 bg-white/50 backdrop-blur-sm rounded-full shadow-sm border border-gray-100 dark:border-gray-800 dark:bg-gray-900/50"
           >
             <ToggleGroupItem
               value="GenAI"
               aria-label="GenAI Projects"
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold ${
-                activeType === "GenAI" 
-                  ? "bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white shadow-md" 
-                  : "bg-transparent text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-6 md:px-8 py-3 rounded-full transition-all duration-300 font-bold ${activeType === "GenAI"
+                ? "bg-purple-200 text-black shadow-lg shadow-purple-500/20 ring-2 ring-purple-400/30"
+                : "bg-transparent text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                }`}
             >
-              <motion.span
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                GenAI
-              </motion.span>
+              <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>GenAI</motion.span>
             </ToggleGroupItem>
             <ToggleGroupItem
               value="Core AI / ML / NLP"
               aria-label="Core AI / ML / NLP Projects"
-              className={`px-8 py-3 rounded-full transition-all duration-300 font-semibold ${
-                activeType === "Core AI / ML / NLP" 
-                  ? "bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white shadow-md" 
-                  : "bg-transparent text-gray-700 hover:bg-gray-50"
-              }`}
+              className={`px-6 md:px-8 py-3 rounded-full transition-all duration-300 font-bold ${activeType === "Core AI / ML / NLP"
+                ? "bg-purple-200 text-black shadow-lg shadow-purple-500/20 ring-2 ring-purple-400/30"
+                : "bg-transparent text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800"
+                }`}
             >
-              <motion.span
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Core AI / ML / NLP
-              </motion.span>
+              <motion.span whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>Core AI / ML / NLP</motion.span>
             </ToggleGroupItem>
           </ToggleGroup>
         </motion.div>
 
         {/* Category Filter */}
-        <motion.div 
+        <motion.div
           className="flex justify-center mb-12"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4, type: "spring", damping: 20 }}
         >
-          <ToggleGroup 
-            type="single" 
+          <ToggleGroup
+            type="single"
             value={activeCategory}
             onValueChange={handleCategoryChange}
             className="flex flex-wrap justify-center gap-2 p-1.5 bg-gray-50 rounded-full shadow-sm"
@@ -521,11 +536,10 @@ const Projects = () => {
                 key={category}
                 value={category}
                 aria-label={`Filter by ${category}`}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  activeCategory === category 
-                    ? "bg-gradient-to-r from-brand-purple to-brand-vivid-purple text-white shadow-md" 
-                    : "bg-transparent text-gray-700 hover:bg-gray-100"
-                }`}
+                className={`px-6 py-2 rounded-full transition-all duration-300 font-bold ${activeCategory === category
+                  ? "bg-purple-200 text-black shadow-md ring-1 ring-purple-400/30"
+                  : "bg-transparent text-gray-700 hover:bg-gray-100 dark:text-gray-300"
+                  }`}
               >
                 <motion.span
                   whileHover={{ scale: 1.05 }}
@@ -543,7 +557,15 @@ const Projects = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, type: "spring", damping: 20 }}
           className="mb-12 relative"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
+          {/* Constrain filtered projects results */}
+          {filteredProjects.length === 0 && (
+            <div className="text-center py-20 text-gray-500 italic">
+              No projects found in this category.
+            </div>
+          )}
           <Carousel
             opts={{
               align: "start",
@@ -557,29 +579,27 @@ const Projects = () => {
           >
             <CarouselContent className="-ml-2 py-4 transition-transform duration-500 ease-out">
               {filteredProjects.map((project, index) => (
-                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                  <motion.div
-                    variants={itemVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                    custom={index}
-                    transition={{ delay: index * 0.05 }}
-                    data-project-id={project.id}
-                  >
-                    <Card className="overflow-hidden hover:shadow-xl transition-all duration-500 border-none shadow-md group h-full">
-                      <div className="relative overflow-hidden">
-                        <motion.img 
-                          src={project.image} 
-                          alt={project.title} 
-                          className="w-full h-48 object-cover" 
-                          whileHover={{ 
-                            scale: 1.1,
-                            transition: { duration: 0.7 } 
-                          }}
-                        />
-                        <motion.div 
-                          className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-medium text-gray-700 shadow-sm border border-gray-100"
+                <CarouselItem key={project.id} className="basis-full md:basis-1/2 lg:basis-1/3 pl-4">
+                  <div className="h-full" data-project-id={project.id}>
+                    <Card
+                      className="h-full glass-panel border-none overflow-hidden group hover:-translate-y-2 transition-transform duration-500 cursor-pointer"
+                      onClick={() => setViewingProject(project)}
+                    >
+                      <div className="relative overflow-hidden h-48">
+                        <motion.div
+                          whileHover={{ scale: 1.1 }}
+                          transition={{ duration: 0.6 }}
+                          className="w-full h-full"
+                        >
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover"
+                          />
+                        </motion.div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <motion.div
+                          className="absolute top-4 right-4 bg-white/90 dark:bg-black/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-brand-purple shadow-sm border border-white/20"
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ delay: 0.2, duration: 0.3 }}
@@ -587,81 +607,93 @@ const Projects = () => {
                           {project.category}
                         </motion.div>
                       </div>
-                      
+
                       <CardHeader className="pb-2">
-                        <CardTitle className="bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple">
+                        <CardTitle className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 group-hover:from-brand-purple group-hover:to-brand-pink transition-all duration-300">
                           {project.title}
                         </CardTitle>
-                        <CardDescription className="text-sm text-gray-600 line-clamp-2">
+                        <CardDescription className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
                           {project.description}
                         </CardDescription>
                       </CardHeader>
-                      
-                      <CardContent className="pb-4">
-                        <div className="flex gap-2 mb-5 flex-wrap">
-                          {project.technologies.map((tech) => (
-                            <motion.span 
-                              key={tech} 
-                              className="px-3 py-1 bg-gradient-to-r from-brand-light-purple to-brand-purple/10 text-brand-purple text-sm rounded-full shadow-sm"
-                              whileHover={{ 
-                                scale: 1.1, 
-                                boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06)" 
-                              }}
-                              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+
+                      <CardContent className="pb-4 flex-grow">
+                        <div className="flex gap-2 mb-4 flex-wrap">
+                          {project.technologies.slice(0, 3).map((tech) => (
+                            <span
+                              key={tech}
+                              className="px-2.5 py-1 bg-purple-200 border border-purple-300 text-black text-xs font-bold rounded-full"
                             >
                               {tech}
-                            </motion.span>
+                            </span>
                           ))}
+                          {project.technologies.length > 3 && (
+                            <span className="px-2.5 py-1 bg-gray-100 dark:bg-gray-800 text-gray-500 text-xs font-medium rounded-full">
+                              +{project.technologies.length - 3}
+                            </span>
+                          )}
                         </div>
-                        
-                        <p className="text-gray-500 italic text-sm">
+
+                        <p className="text-gray-500 dark:text-gray-500 italic text-xs border-l-2 border-brand-purple/30 pl-3">
                           "{project.comment}"
                         </p>
                       </CardContent>
-                      
-                      <CardFooter className="pt-0 flex justify-between items-center">
+
+                      <CardFooter className="pt-0 flex justify-between items-center mt-auto" onClick={(e) => e.stopPropagation()}>
                         <div className="flex space-x-2">
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <Button 
-                              variant="outline" 
-                              size="sm" 
-                              className="flex items-center gap-1 rounded-full border-brand-purple text-brand-purple hover:bg-brand-light-purple"
-                              onClick={() => setViewingProject(project)}
-                            >
-                              <Eye size={16} /> View
-                            </Button>
-                          </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              className="flex items-center gap-1 rounded-full border-brand-vivid-purple text-brand-vivid-purple hover:bg-brand-light-purple/50"
-                              onClick={() => setProjectDetails(project)}
-                            >
-                              <Info size={16} /> Details
-                            </Button>
-                          </motion.div>
+                          <motion.button
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setViewingProject(project);
+                            }}
+                            className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-200 text-black font-bold text-sm hover:bg-brand-purple hover:text-white transition-colors"
+                          >
+                            <Eye size={16} /> View
+                          </motion.button>
                         </div>
                         <div className="flex items-center space-x-2">
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <a href={project.githubUrl} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
-                              <Github size={16} />
-                            </a>
-                          </motion.div>
-                          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                            <a href={project.demoUrl} className="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">
-                              <ExternalLink size={16} />
-                            </a>
-                          </motion.div>
+                          <motion.a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            whileHover={{ scale: 1.1, rotate: 10 }}
+                            className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-brand-purple hover:text-white transition-colors"
+                          >
+                            <Github size={18} />
+                          </motion.a>
+                          {project.demoUrl && project.demoUrl !== "#" && (
+                            <motion.a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.1, rotate: -10 }}
+                              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-brand-pink hover:text-white transition-colors"
+                            >
+                              <ExternalLink size={18} />
+                            </motion.a>
+                          )}
+                          {project.youtubeUrl && (
+                            <motion.a
+                              href={project.youtubeUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              whileHover={{ scale: 1.1, rotate: 10 }}
+                              className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-red-600 hover:bg-red-600 hover:text-white transition-colors"
+                            >
+                              <Youtube size={18} />
+                            </motion.a>
+                          )}
                         </div>
                       </CardFooter>
                     </Card>
-                  </motion.div>
+                  </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
           </Carousel>
-          
+
           <div className="flex items-center justify-center mt-8 gap-8">
             <motion.button
               className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 text-brand-purple"
@@ -669,33 +701,33 @@ const Projects = () => {
               whileHover={{ scale: 1.1, backgroundColor: "#f9f5ff" }}
               whileTap={{ scale: 0.9 }}
               disabled={currentPage === 0 && !carouselApi?.options?.loop}
+              style={{ opacity: currentPage === 0 && !carouselApi?.options?.loop ? 0.5 : 1 }}
             >
               <ChevronLeft className="h-6 w-6" />
             </motion.button>
-            
+
             <div className="flex gap-2">
               {Array.from({ length: totalPages }).map((_, index) => (
                 <motion.button
                   key={index}
-                  className={`h-3 rounded-full transition-all duration-500 ease-out ${
-                    index === currentPage ? "bg-brand-purple w-10" : "bg-gray-300 w-3"
-                  }`}
+                  className={`h-3 rounded-full transition-all duration-500 ease-out ${index === currentPage ? "bg-brand-purple w-10" : "bg-gray-300 w-3"
+                    }`}
                   onClick={() => {
-                    carouselApi?.scrollTo(index * 3);
-                    setCurrentPage(index);
+                    carouselApi?.scrollTo(index);
                   }}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                 />
               ))}
             </div>
-            
+
             <motion.button
               className="flex items-center justify-center w-12 h-12 rounded-full bg-white shadow-md hover:shadow-lg transition-all duration-300 text-brand-purple"
               onClick={handleNext}
               whileHover={{ scale: 1.1, backgroundColor: "#f9f5ff" }}
               whileTap={{ scale: 0.9 }}
               disabled={currentPage === totalPages - 1 && !carouselApi?.options?.loop}
+              style={{ opacity: currentPage === totalPages - 1 && !carouselApi?.options?.loop ? 0.5 : 1 }}
             >
               <ChevronRight className="h-6 w-6" />
             </motion.button>
@@ -704,42 +736,42 @@ const Projects = () => {
 
         <AnimatePresence>
           {viewingProject && (
-            <motion.div 
+            <motion.div
               className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setViewingProject(null)}
             >
-              <motion.div 
+              <motion.div
                 className="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
                 initial={{ scale: 0.9, opacity: 0, y: 20 }}
                 animate={{ scale: 1, opacity: 1, y: 0 }}
                 exit={{ scale: 0.9, opacity: 0, y: 20 }}
-                transition={{ 
-                  type: "spring", 
-                  damping: 25, 
-                  stiffness: 300 
+                transition={{
+                  type: "spring",
+                  damping: 25,
+                  stiffness: 300
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="relative">
                   <img src={viewingProject.image} alt={viewingProject.title} className="w-full h-64 object-cover rounded-t-2xl" />
-                  <motion.button 
+                  <motion.button
                     className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm w-10 h-10 rounded-full hover:bg-white flex items-center justify-center"
                     onClick={() => setViewingProject(null)}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg>
                   </motion.button>
                 </div>
                 <div className="p-8">
                   <h3 className="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple">{viewingProject.title}</h3>
                   <div className="flex gap-2 mb-5 flex-wrap">
                     {viewingProject.technologies.map((tech) => (
-                      <motion.span 
-                        key={tech} 
+                      <motion.span
+                        key={tech}
                         className="px-3 py-1.5 bg-gradient-to-r from-brand-light-purple to-brand-purple/20 text-brand-purple text-sm rounded-full"
                         whileHover={{ scale: 1.1, boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1)" }}
                         whileTap={{ scale: 0.95 }}
@@ -749,6 +781,14 @@ const Projects = () => {
                     ))}
                   </div>
                   <p className="text-gray-700 mb-6 text-lg">{viewingProject.description}</p>
+
+                  <div className="mb-6 bg-purple-50 dark:bg-purple-900/10 p-4 rounded-lg border border-purple-100 dark:border-purple-800/20">
+                    <h4 className="flex items-center gap-2 text-sm font-bold text-brand-purple mb-2">
+                      Developer Note
+                    </h4>
+                    <p className="text-gray-700 dark:text-gray-300 italic">"{viewingProject.comment}"</p>
+                  </div>
+
                   <h4 className="text-xl font-semibold mb-3">Project Details</h4>
                   <p className="text-gray-600 mb-6">{viewingProject.details}</p>
                   <div className="flex justify-between items-center pt-4 border-t">
@@ -757,18 +797,34 @@ const Projects = () => {
                         <Github size={18} /> GitHub Repository
                       </a>
                     </motion.div>
-                    <motion.div 
-                      whileHover={{ scale: 1.05 }} 
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <Button
-                        className="rounded-full bg-gradient-to-r from-brand-purple to-brand-vivid-purple hover:opacity-90 hover:shadow-lg transition-all duration-300"
+                    {viewingProject.demoUrl && viewingProject.demoUrl !== "#" && (
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                       >
-                        <a href={viewingProject.demoUrl} className="flex items-center gap-1 text-white font-medium">
-                          <ExternalLink size={18} /> Live Demo
-                        </a>
-                      </Button>
-                    </motion.div>
+                        <Button
+                          className="rounded-full bg-gradient-to-r from-brand-purple to-brand-vivid-purple hover:opacity-90 hover:shadow-lg transition-all duration-300"
+                        >
+                          <a href={viewingProject.demoUrl} className="flex items-center gap-1 text-white font-medium">
+                            <ExternalLink size={18} /> Live Demo
+                          </a>
+                        </Button>
+                      </motion.div>
+                    )}
+                    {viewingProject.youtubeUrl && (
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <Button
+                          className="rounded-full bg-red-600 hover:bg-red-700 text-white hover:shadow-lg transition-all duration-300"
+                        >
+                          <a href={viewingProject.youtubeUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
+                            <Youtube size={18} /> Video
+                          </a>
+                        </Button>
+                      </motion.div>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -776,63 +832,6 @@ const Projects = () => {
           )}
         </AnimatePresence>
 
-        {/* Project Details Dialog */}
-        <Dialog open={!!projectDetails} onOpenChange={() => setProjectDetails(null)}>
-          <DialogContent className="sm:max-w-xl">
-            <DialogHeader>
-              <DialogTitle className="text-2xl bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-brand-purple">
-                {projectDetails?.title}
-              </DialogTitle>
-              <DialogDescription className="text-base text-gray-600">
-                {projectDetails?.description}
-              </DialogDescription>
-            </DialogHeader>
-            
-            <div className="space-y-6">
-              <div className="flex gap-2 flex-wrap">
-                {projectDetails?.technologies.map((tech) => (
-                  <motion.span 
-                    key={tech} 
-                    className="px-3 py-1 bg-gradient-to-r from-brand-light-purple to-brand-purple/10 text-brand-purple text-sm rounded-full shadow-sm"
-                    whileHover={{ scale: 1.1 }}
-                  >
-                    {tech}
-                  </motion.span>
-                ))}
-              </div>
-              
-              <div>
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Project Overview</h4>
-                <p className="text-gray-800">{projectDetails?.details}</p>
-              </div>
-              
-              <div>
-                <h4 className="text-sm font-medium text-gray-500 mb-2">Developer Note</h4>
-                <p className="text-gray-800 italic">"{projectDetails?.comment}"</p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-3 mt-4">
-                <Button 
-                  variant="outline" 
-                  className="w-full flex items-center justify-center gap-2"
-                  onClick={() => {
-                    window.open(projectDetails?.githubUrl, '_blank');
-                  }}
-                >
-                  <Github size={18} /> View Code
-                </Button>
-                <Button 
-                  className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-brand-purple to-brand-vivid-purple"
-                  onClick={() => {
-                    window.open(projectDetails?.demoUrl, '_blank');
-                  }}
-                >
-                  <ExternalLink size={18} /> Live Demo
-                </Button>
-              </div>
-            </div>
-          </DialogContent>
-        </Dialog>
       </div>
     </section>
   );
