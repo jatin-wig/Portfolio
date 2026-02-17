@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import Superpowers from '../components/Superpowers';
@@ -72,8 +73,8 @@ const HomePage = () => {
             I'm always looking for new challenges and interesting projects.
           </p>
           <div className="flex justify-center">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="group relative px-8 py-4 bg-white dark:bg-white/10 text-gray-900 dark:text-white rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-lg hover:shadow-brand-purple/20"
             >
               <span className="relative z-10 flex items-center gap-2">
@@ -81,7 +82,7 @@ const HomePage = () => {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-brand-purple to-brand-pink opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
