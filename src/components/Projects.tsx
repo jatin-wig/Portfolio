@@ -213,20 +213,20 @@ const projects = [
     youtubeUrl: "https://www.youtube.com/watch?v=9r151tjA4eg"
   },
 
-  /*{
-    id: 15,
-    title: "Music Genre Classifier",
-    description: "Audio analysis tool that identifies music genres from short audio samples.",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e",
-    category: "Easy",
-    type: "Core AI / ML / NLP",
-    technologies: ["Librosa", "CNN", "Flask"],
-    githubUrl: "#",
-    demoUrl: "#",
-    comment: "Still argues with me about whether that one song is indie rock or alternative.",
-    details: "This audio analysis tool can identify music genres from just a few seconds of audio. It uses convolutional neural networks to analyze spectrograms and other audio features extracted with Librosa. The classifier can distinguish between 10 popular music genres with 85% accuracy and provides confidence scores for each potential classification."
-  },
   {
+    id: 15,
+    title: " Web Research Agent with LangGraph",
+    description: "AI-powered system that researches topics on the internet and generates structured articles automatically.",
+    image: "/lovable-uploads/ChatGPT Image Feb 24, 2026, 08_57_02 PM.png",
+    category: "Hard",
+    type: "GenAI",
+    technologies: ["Librosa", "CNN", "Flask"],
+    githubUrl: " https://github.com/jatin-wig/Web-Research-Agent-LangGraph-Gemini-DuckDuckGo-",
+    demoUrl: "#",
+    comment: "Basically a tireless internet researcher that never complains about reading 20 articles at once.",
+    details: "This autonomous research system uses a multi-agent architecture powered by LangGraph and Gemini to perform deep web research. Given a topic, the AI generates research queries, searches the internet using DuckDuckGo, scrapes relevant webpages, summarizes large documents, and synthesizes the information into a structured, publication-quality article. The system includes planning, research, summarization, synthesis, and refinement agents, allowing it to mimic a real research workflow. Built with Python, LangGraph, LangChain, Streamlit, BeautifulSoup, and Gemini 2.5 Flash Lite."
+  },
+  /*{
     id: 16,
     title: "Reinforcement Learning Game AI",
     description: "Self-learning AI agent that masters complex games through reinforcement learning.",
