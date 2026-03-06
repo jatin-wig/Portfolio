@@ -238,6 +238,7 @@ const projects = [
     demoUrl: "#",
     comment: "It beat me at chess after just 4 hours of self-play training!",
     details: "This reinforcement learning agent can master various games by playing against itself or other opponents. Using Deep Q-Networks (DQN) and policy gradient methods, it learns optimal strategies through trial and error. The system includes visualization tools to understand the agent's learning process and decision-making strategies. It has successfully learned to play chess, Go, and several Atari games."
+    youtubeUrl: "https://www.youtube.com/watch?v=8jJkpOccrOU"
   },
   {
     id: 17,
