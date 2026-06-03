@@ -226,21 +226,21 @@ const projects = [
     comment: "Basically a tireless internet researcher that never complains about reading 20 articles at once.",
     details: "This autonomous research system uses a multi-agent architecture powered by LangGraph and Gemini to perform deep web research. Given a topic, the AI generates research queries, searches the internet using DuckDuckGo, scrapes relevant webpages, summarizes large documents, and synthesizes the information into a structured, publication-quality article. The system includes planning, research, summarization, synthesis, and refinement agents, allowing it to mimic a real research workflow. Built with Python, LangGraph, LangChain, Streamlit, BeautifulSoup, and Gemini 2.5 Flash Lite."
   },
-  /*{
-    id: 16,
-    title: "Reinforcement Learning Game AI",
-    description: "Self-learning AI agent that masters complex games through reinforcement learning.",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5",
-    category: "Hard",
-    type: "Core AI / ML / NLP",
-    technologies: ["PyTorch", "OpenAI Gym", "DQN"],
-    githubUrl: "#",
-    demoUrl: "#",
-    comment: "It beat me at chess after just 4 hours of self-play training!",
-    details: "This reinforcement learning agent can master various games by playing against itself or other opponents. Using Deep Q-Networks (DQN) and policy gradient methods, it learns optimal strategies through trial and error. The system includes visualization tools to understand the agent's learning process and decision-making strategies. It has successfully learned to play chess, Go, and several Atari games."
-    youtubeUrl: "https://www.youtube.com/watch?v=8jJkpOccrOU"
-  },
   {
+    id: 16,
+    title: "A2A-Multi-Agent-Travel-Planner",
+    description: "A multi-agent AI travel planning system where specialized agents collaborate using the Agent-to-Agent (A2A) Protocol to generate personalized trip itineraries.",
+    image: "/lovable-uploads/a2a.png",
+    category: "Hard",
+    type: "GenAI",
+    technologies: ["Python","FastAPI","Streamlit","A2A Protocol","Microservices","REST APIs"],
+    githubUrl: "https://github.com/jatin-wig/A2A-Multi-Agent-Travel-Planner",
+    demoUrl: "#",
+    comment: "Watching 6 AI agents collaborate to build a complete trip plan in seconds was incredibly satisfying!",
+    details: "A2A Multi-Agent Travel Planner is a distributed AI system that demonstrates Agent-to-Agent (A2A) communication through a network of specialized travel planning agents. The Planner Agent orchestrates requests and coordinates with dedicated Hotel, Flight, Place Discovery, Budget, and Itinerary Agents. Each agent operates as an independent FastAPI microservice and exchanges structured data using a custom A2A protocol. The platform generates complete travel plans including hotel recommendations, flight options, tourist attractions, day-by-day itineraries, and budget breakdowns based on user preferences. Built with Streamlit and FastAPI, the project showcases multi-agent orchestration, service-to-service communication, workflow automation, and scalable AI system design.",
+    youtubeUrl: "https://youtu.be/rDz6i-gXTs8"
+  },
+  /*{
     id: 17,
     title: "Personal Finance Advisor",
     description: "AI-powered financial advisor that provides personalized savings and investment recommendations.",
